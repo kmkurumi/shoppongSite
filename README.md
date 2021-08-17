@@ -4,6 +4,6 @@
 使用說明：  
 1.git clone https://github.com/kmkurumi/shoppongSite.git  
 2.cd shoppongSite  
-3.npm install 
+3.npm install   
 地址目前有問題  
 
