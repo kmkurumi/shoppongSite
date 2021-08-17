@@ -1,0 +1,66 @@
+body {
+  background-color: #d4d4d4;
+}
+
+.navbar {
+  font-size: 22px;
+}
+
+.card {
+  width: 200px;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+}
+
+.modal-footer a .bi-facebook {
+  color: gray;
+}
+
+.modal-footer a .bi-google {
+  color: gray;
+}
+
+.modal-footer a .bi-facebook:hover {
+  color: blue;
+}
+
+.my-style-selector select {
+  -moz-appearance: none;
+  border-color: #ced4da;
+  border-width: 1px;
+  border-radius: 3px;
+  color: #21252B;
+  outline: none;
+  padding: .4em 1em;
+}
+
+.tanregister form input {
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.tanregister form label {
+  margin: 0 0 3px 5px;
+}
+
+.tansetting form input {
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.tansetting form label {
+  margin: 0 0 3px 5px;
+}
+
+@media (min-width: 991.98px) {
+  .tansetting {
+    width: 60%;
+  }
+  .tanregister {
+    width: 60%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
