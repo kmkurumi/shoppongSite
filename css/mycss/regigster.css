@@ -1,0 +1,57 @@
+.dantyou-benefit{
+    font-size: 18px;
+    border: 3px dotted mediumpurple;
+}
+.dantyou-form{
+    background-color: bisque;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    border: 3px dotted mediumpurple;
+    padding: 25px;
+    font-size: 18px;
+    color: olive;
+    font-weight: 600;
+    width: 700px;
+}
+
+/* 地址 */
+.my-style-selector select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-color: #6ec3f5;
+    border-width: 2px;
+    border-radius: 10em;
+    color: #1390e8;
+    margin-right: 10px;
+    outline: none;
+    padding: .3em 1.25em;
+  }
+
+.dantyou-form h3{
+    font-weight: bold;
+    font-size: 40px;
+    color: cadetblue;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.dantyou-form button{
+    display: flex;
+    margin-left: 80%;
+}
+
+.dantyou-input{
+    width: 70%;
+    /* border: none; */
+    border-radius: 2em;
+    border-color: #6ec3f5;
+    padding: .3em 1.25em;
+}
+
+
+
+
+

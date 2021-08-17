@@ -1,0 +1,49 @@
+@charset "UTF-8";
+body {
+  background-color: bisque;
+}
+
+nav {
+  height: 50px;
+  border-bottom: 2px solid black;
+}
+
+.navbar {
+  background-color: lightseagreen;
+}
+
+.navbar-brand img {
+  width: 30px;
+  height: 30px;
+}
+
+li a {
+  /* 階層很多時，用important才會顯現 */
+  color: yellow !important;
+  font-size: 20px;
+  text-decoration: underline !important;
+}
+
+li a:hover {
+  color: lightgreen !important;
+  background-color: blanchedalmond;
+}
+
+.navbar-toggler {
+  background-color: aliceblue;
+}
+
+.nav-link {
+  padding: 20px;
+}
+
+/* 偵測輸出裝置 */
+@media (max-width: 600px) {
+  nav {
+    height: auto;
+  }
+  .nav-link {
+    padding: 10px;
+  }
+}
+/*# sourceMappingURL=navbar.css.map */
