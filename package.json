@@ -1,0 +1,21 @@
+{
+  "name": "topic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.0",
+    "bootstrap-icons": "^1.5.0",
+    "jquery": "^3.6.0",
+    "tw-city-selector": "^2.1.1",
+    "vue": "^3.2.3"
+  },
+  "devDependencies": {
+    "purgecss": "^4.0.3"
+  }
+}

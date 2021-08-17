@@ -1,0 +1,11 @@
+.slide-pic {
+  width: 90%;
+  height: 400px;
+  position: relative;
+  left: 5%;
+}
+
+.carousel-item h2 {
+  color: aquamarine;
+}
+/*# sourceMappingURL=carousel.css.map */

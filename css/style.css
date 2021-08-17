@@ -1,0 +1,172 @@
+@charset "UTF-8";
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.profile-img {
+  /* clip-path:circle(95%); */
+  width: 100%;
+  height: 50%;
+  border: 1px dotted gray;
+}
+
+.card {
+  background-color: beige;
+  height: 300px;
+  margin: 10px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -5%;
+  margin-bottom: 5%;
+}
+
+.card-text {
+  font-size: 18px;
+  /* 設定文字行距 */
+  line-height: 10px;
+  /* 設定文字間距 */
+  /* letter-spacing: 2px; */
+}
+
+.card-body .btn {
+  position: relative;
+  left: 40%;
+}
+
+.product-row {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10%;
+  border: 1px solid black;
+}
+
+.product-quantity {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 40%;
+}
+
+a {
+  text-decoration: none;
+  font-size: 30px;
+  color: blueviolet;
+  margin: 5px;
+}
+
+.modal-header {
+  margin: 10px;
+}
+
+.modal-header h3 {
+  font-size: 40px;
+  color: dodgerblue;
+  /* 預設是左上點，文字置中 */
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* https://cssgradient.io/ */
+.modal-content {
+  /* background: rgb(5,159,217);
+   *background: linear-gradient(302deg, rgba(5,159,217,0.8438725832129726) 0%, rgba(40,170,176,0.6337885495995272) 46%, rgba(0,255,205,0.3536765047816002) 93%); */
+  background-color: bisque;
+}
+
+.modal-body form .account, .modal-body form .password {
+  margin: 20px;
+  width: 90%;
+  border-radius: 20px;
+}
+
+.remember {
+  margin-bottom: 20px;
+}
+
+.modal-body form .btn {
+  width: 100%;
+  font-size: 20px;
+  color: aliceblue;
+}
+
+/* 改變文字位置 */
+.modal-footer {
+  max-width: 80%;
+}
+
+.modal-footer a {
+  font-size: 20px;
+}
+
+body {
+  background-color: bisque;
+}
+
+nav {
+  height: 50px;
+  border-bottom: 2px solid black;
+}
+
+.navbar {
+  background-color: lightseagreen;
+}
+
+.navbar-brand img {
+  width: 30px;
+  height: 30px;
+}
+
+li a {
+  /* 階層很多時，用important才會顯現 */
+  color: yellow !important;
+  font-size: 20px;
+  text-decoration: underline !important;
+}
+
+li a:hover {
+  color: lightgreen !important;
+  background-color: blanchedalmond;
+}
+
+.navbar-toggler {
+  background-color: aliceblue;
+}
+
+.nav-link {
+  padding: 20px;
+}
+
+/* 偵測輸出裝置 */
+@media (max-width: 600px) {
+  nav {
+    height: auto;
+  }
+  .nav-link {
+    padding: 10px;
+  }
+}
+
+.slide-pic {
+  width: 90%;
+  height: 400px;
+  position: relative;
+  left: 5%;
+}
+
+.carousel-item h2 {
+  color: aquamarine;
+}
+/*# sourceMappingURL=style.css.map */

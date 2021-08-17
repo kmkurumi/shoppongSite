@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link href='/calendar/main.css' rel='stylesheet' />
+    <script src='/calendar/main.js'></script>
+    <!-- 轉換成中文 -->
+    <script src="/calendar/locales-all.js"></script>
+
+    <!-- 變小 -->
+    <link rel="stylesheet" href="/calendar/style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                height:600,
+                locale:'zh-TW',
+                navLinks:true,
+                headerToolbar:{
+                    left:'prev,next today',
+                    center:'title',
+                    right:'dayGridMonth,timeGridWeek,timeGridDay'
+                }, 
+                events:[
+                    {
+                    title:'開團',
+                    start:'2021-08-10',
+                    end:'2021-08-15'
+                    }
+                ]
+            });
+      
+
+            calendar.render();
+        });
+
+    </script>
+  </head>
+  <body>
+      <!-- https://fullcalendar.io/docs/initialize-globals -->
+    <div class="container">
+        <div id='calendar'></div>
+    </div>
+
+  </body>
+</html>
