@@ -1,0 +1,41 @@
+.container{
+    width: 500px;
+    height: 600px;
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+    border: 1px solid black;
+    padding: 20px;
+    box-shadow: 5px gray;
+    background-color:aliceblue;
+}
+
+.fc .fc-toolbar-title{
+    color: aqua;
+    font-size: 25px;
+}
+
+.fc th{
+    color:cadetblue;
+    font-size: 15px;
+}
+
+fc-view-harness{
+    max-height: 100%;
+}
+
+@media (max-width:600px){
+    .container{
+        width: 370px;
+        height: 600px;
+    }
+    .fc .fc-toolbar-title{
+        font-size: 20px;
+    }
+    .fc th{
+        /* color:blue; */
+        font-size: 12px;
+    }
+}
+
