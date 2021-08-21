@@ -1,4 +1,4 @@
-<!-- 驗證碼 -->
+// 驗證碼 
 // https://www.twblogs.net/a/5b8131df2b71772165ab81b8
 /**生成一個隨機數**/
 function randomNum(min,max){

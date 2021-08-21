@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.toast.css">
+    <style>
+        .modal-header,
+        h4,
+        .close {
+            background-color: #5cb85c;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .modal-footer {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2>會員資料 <span class="pull-right"><button id="newItem" class="btn btn-success btn-sm"><span
+                                class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></span></h2>
+                <ul id="latestNews" class="list-group">
+                    //資料欄位
+                    <li class="list-group-item">First item
+                        <span class="pull-right">
+                            <button class="btn btn-info btn-xs editItem">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </button>&nbsp;
+                            <button class="btn btn-danger btn-xs deleteItem">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                        </span>
+                    </li>
+                    <li class="list-group-item">Second item<span class="pull-right"><button
+                                class="btn btn-info btn-xs editItem"><span class="glyphicon glyphicon-pencil"
+                                    aria-hidden="true"></span></button>&nbsp;<button
+                                class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-remove"
+                                    aria-hidden="true"></span></button></span></li>
+                    <li class="list-group-item">Third item<span class="pull-right"><button
+                                class="btn btn-info btn-xs editItem"><span class="glyphicon glyphicon-pencil"
+                                    aria-hidden="true"></span></button>&nbsp;<button
+                                class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-remove"
+                                    aria-hidden="true"></span></button></span></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-4">
+                &nbsp;
+            </div>
+
+            <div class="col-sm-4">
+                &nbsp;
+            </div>
+
+        </div> <!-- end of row -->
+
+    </div> <!-- end of container -->
+
+
+    <!-- 對話盒 -->
+    <div id="newsModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4>新增/修改</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="titleTextBox">
+                                <span class="glyphicon glyphicon-bullhorn"></span>
+                                標題
+                            </label>
+                            <input type="text" id="titleTextBox" class="form-control" placeholder="請輸入標題" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ymdTextBox">
+                                <span class="glyphicon glyphicon-time"></span>
+                                日期
+                            </label>
+                            <input type="text" id="ymdTextBox" class="form-control"
+                                placeholder="yyyy-mm-dd 例如: 2017-05-20">
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="pull-right">
+                        <button type="button" id="okButton" class="btn btn-success">
+                            <span class="glyphicon glyphicon-ok"></span> 確定
+                        </button>
+                        <button type="button" id="cancelButton" class="btn btn-default" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-remove"></span> 取消
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /對話盒 -->
+
+
+    <!-- ========== UI 與 JavaScript 分隔線 ========== -->
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.toast.js"></script>
+
+    <script>
+        // 使用方式:
+        // showToast("標題", "提示文字") 例如:
+        // showToast("Hint", "請點一下正確的圖案");
+        function showToast(heading, message) {
+            $.toast({
+                text: message, // Text that is to be shown in the toast
+                heading: heading, // Optional heading to be shown on the toast
+                icon: 'warning', // Type of toast icon
+                showHideTransition: 'fade', // fade, slide or plain
+                allowToastClose: true, // Boolean value true or false
+                hideAfter: 3000, // false to make it sticky or number representing the miliseconds as time after which toast needs to be hidden
+                stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
+                position: 'top-right', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
+                textAlign: 'left', // Text alignment i.e. left, right or center
+                loader: true, // Whether to show loader or not. True by default
+                loaderBg: '#9ec600', // Background color of the toast loader
+                beforeShow: function () {}, // will be triggered before the toast is shown
+                afterShown: function () {}, // will be triggered after the toat has been shown
+                beforeHide: function () {}, // will be triggered before the toast gets hidden
+                afterHidden: function () {} // will be triggered after the toast has been hidden
+            });
+        }
+    </script>
+
+
+    <script>
+        $(function () {
+            //設一個變數來辨別對話是由新增還是修改
+            var currentIndex = -1;
+            var membersList = [{
+                    Id: 1,
+                    name: "name",
+                    phone: "phone",
+                    email: "email"
+                },
+                {
+                    Id: 2,
+                    name: "name",
+                    phone: "phone",
+                    email: "email"
+                },
+                {
+                    Id: 3,
+                    name: "name",
+                    phone: "phone",
+                    email: "email"
+                },
+                {
+                    Id: 4,
+                    name: "name",
+                    phone: "phone",
+                    email: "email"
+                },
+                {
+                    Id: 5,
+                    name: "name",
+                    phone: "phone",
+                    email: "email"
+                },
+            ];
+
+            // 練習與任務:
+
+            function refreshUI() {
+                $("#latestNews").empty();
+                membersList.forEach(function (member) {
+                    //變數用於jquery，顯示的東西
+                    let liText = `${member.name} [${member.phone}] [${member.email}]`;
+                    // alert(liText);
+                    //jquery物件用於jquery
+                    let $li = $("<li></li>");
+                    $li.text(liText);
+                    $li.addClass("list-group-item");
+                    //要用''，因為"pull-right"...
+                    $li.append(
+                        '<span class="pull-right"><button class="btn btn-info btn-xs editItem"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>&nbsp;<button class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></span>'
+                    );
+                    $("#latestNews").append($li);
+                })
+                //修改
+                $(".editItem").on("click", function () {
+                    //尋找父節點，看在第幾個，jquery的index
+                    var idx = $(this).closest("li").index();
+                    //將全域變數在function內改值，區分modal的ok是修改是新增
+                    currentIndex = 1;
+                    //顯示目前的內容
+                    $("#titleTextBox").prop("value", membersList[idx].title);
+                    $("#ymdTextBox").val(membersList[idx].ymd);
+                    //顯示空的
+                    // $("#titleTextBox").prop("value","");
+                    // $("#ymdTextBox").val("");
+                    $("#newsModal").modal({
+                        backdrop: "static"
+                    });
+                    // alert(idx+1);
+                })
+                $(".deleteItem").on("click", function () {
+                    var idx = $(this).closest("li").index();
+                    $.ajax({
+                        type: "delete",
+                        url: "/home/news",
+                        data: membersList[idx]
+                    }).then(function (e) {
+                        showToast("info", e);
+                        downloadDataAndRefreshUI();
+                    })
+                })
+            }
+            //第一個執行的
+            function downloadDataAndRefreshUI() {
+                $.ajax({
+                    //下載
+                    type: "get",
+                    url: "/home/news"
+                }).then(function (e) {
+                    //更新
+                    membersList = JSON.parse(e);
+                    refreshUI();
+                })
+            }
+            downloadDataAndRefreshUI();
+
+            //顯示綠色加號，增加madal
+            $("#newItem").on("click", function () {
+                currentIndex = -1;
+                $("#titleTextBox").prop("value", "");
+                $("#ymdTextBox").val("");
+                $("#newsModal").modal({
+                    backdrop: "static"
+                });
+            })
+
+            //modal的ok
+            $("#okButton").on("click", function () {
+                //按ok會關起modal
+                $("#newsModal").modal("hide");
+                if (currentIndex < 0) { //create
+                    var dataToServer = {
+                        title: $("#titleTextBox").prop("value"),
+                        ymd: $("#ymdTextBox").val()
+                    }
+                    $.ajax({
+                        //修改
+                        type: "post",
+                        url: "/home/news",
+                        data: dataToServer
+                    }).then(function (e) {
+                        //更新
+                        membersList = JSON.parse(e);
+                        downloadDataAndRefreshUI();
+                    })
+                } else {
+                    var dataToServer = {
+                        newsId: membersList[currentIndex].Id,
+                        title: $("#titleTextBox").prop("value"),
+                        ymd: $("#ymdTextBox").val()
+                    }
+
+                    $.ajax({
+                        type: "put",
+                        url: "/home/news",
+                        data: dataToServer
+                    }).then(function (e) {
+                        showToast("info", e);
+                        downloadDataAndRefreshUI();
+                    })
+                }
+
+            })
+
+        }) //end of init.
+    </script>
+
+</body>
+
+</html>

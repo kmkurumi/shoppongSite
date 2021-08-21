@@ -37,7 +37,7 @@ var connection = mysql.createConnection({
 	user : 'root',
 	password : 'root',
 	port:'3307',
-	database : 'labdb'
+	database : ''
 });
 
 connection.connect(function(err) {

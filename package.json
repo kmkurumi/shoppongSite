@@ -9,13 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "bootstrap": "^5.1.0",
     "bootstrap-icons": "^1.5.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "jquery": "^3.6.0",
-    "tw-city-selector": "^2.1.1",
-    "vue": "^3.2.3"
+    "mysql": "^2.18.1",
+    "tw-city-selector": "^2.1.1"
   },
   "devDependencies": {
-    "purgecss": "^4.0.3"
+    "sass-loader": "^12.1.0"
   }
 }
