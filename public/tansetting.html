@@ -2,170 +2,189 @@
 <html>
 
 <head>
-<title>團長設定</title>
-<meta charset="UTF-8">
-<!-- 響應式網站 -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>團長設定</title>
+	<meta charset="UTF-8">
+	<!-- 響應式網站 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--  bootstrap導入程式 -->
-<link  href="./css/all.css"rel="stylesheet">
-<link  href="./css/style.css"rel="stylesheet">
-<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- 導入日曆 -->
-<link href='/calendar/main.css' rel='stylesheet' />
-<script src='/calendar/main.js'></script>
-    <!-- 轉換成中文 -->
-<script src="/calendar/locales-all.js"></script>
+	<!--  bootstrap導入程式 -->
+	<link href="./css/all.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+	<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- 導入日曆 -->
+	<link href='/calendar/main.css' rel='stylesheet' />
+	<script src='/calendar/main.js'></script>
+	<!-- 轉換成中文 -->
+	<script src="/calendar/locales-all.js"></script>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark  bg-dark p-3">
-        <!-- fluid:小螢幕也可以擴散出來 -->
-        <div class="container-fluid">
-            <!-- 品牌logo -->
-            <div class="navbar-brand"href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
-                <path d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z"/>
-              </svg>
-            </div>
-            <!-- 手機版 -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#linkbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- 桌上型 -->
-            <div class="collapse navbar-collapse" id="linkbar">
-                <!-- navbar-nav:水平呈現 me-auto:自動分到兩邊-->
-                <!-- 列出內容 -->
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a href="./homepage.html" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
-                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">開團</a>
-                    </li>
-                    <!-- <li class="nav-item">
+	<nav class="navbar navbar-expand-md navbar-dark  bg-dark p-3">
+		<!-- fluid:小螢幕也可以擴散出來 -->
+		<div class="container-fluid">
+			<!-- 品牌logo -->
+			<div class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+					fill="currentColor" class="bi bi-asterisk" viewBox="0 0 16 16">
+					<path
+						d="M8 0a1 1 0 0 1 1 1v5.268l4.562-2.634a1 1 0 1 1 1 1.732L10 8l4.562 2.634a1 1 0 1 1-1 1.732L9 9.732V15a1 1 0 1 1-2 0V9.732l-4.562 2.634a1 1 0 1 1-1-1.732L6 8 1.438 5.366a1 1 0 0 1 1-1.732L7 6.268V1a1 1 0 0 1 1-1z" />
+				</svg>
+			</div>
+			<!-- 手機版 -->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#linkbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- 桌上型 -->
+			<div class="collapse navbar-collapse" id="linkbar">
+				<!-- navbar-nav:水平呈現 me-auto:自動分到兩邊-->
+				<!-- 列出內容 -->
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<a href="./homepage.html" class="nav-link">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+								class="bi bi-house-door" viewBox="0 0 16 16">
+								<path
+									d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+							</svg>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="#" class="nav-link">開團</a>
+					</li>
+					<!-- <li class="nav-item">
                         <a href="#" class="nav-link">關於</a>
                     </li> -->
-                </ul>
-                <!-- 列出到右邊 -->
-                <!-- d-flex:較短，但中文會無法以一行呈現 -->
-                <form class="input-group product-search ms-auto" style="width: 300px;">
-                    <input class="form-control"  type="search"placeholder="搜尋文字">
-                    <button class="btn btn-primary" type="submit">搜尋</button>
-                </form>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link"href="#" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">會員登入</a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top" title="通知">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
-                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-                            </svg>
-                        </a>
-                    </li>
-   
-                </ul>
-            </div>
-        </div>
-      </nav>
-<!-- ----------------------------------------------------- -->
-<!-- 橫的導覽列 -->
-  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">Sidebar</span>
-    </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          1
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          2
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          3
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          4
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          5
-        </a>
-      </li>
-    </ul>
-    <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="" alt="#" width="32" height="32" class="rounded-circle me-2">
-        <strong>Kevin</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
-      </ul>
-    </div>
-  </div>
-<!-- ----------------------------------------------------- -->
+				</ul>
+				<!-- 列出到右邊 -->
+				<!-- d-flex:較短，但中文會無法以一行呈現 -->
+				<form class="input-group product-search ms-auto" style="width: 300px;">
+					<input class="form-control" type="search" placeholder="搜尋文字">
+					<button class="btn btn-primary" type="submit">搜尋</button>
+				</form>
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#" type="button" data-bs-toggle="modal"
+							data-bs-target="#loginModal">會員登入</a>
+					</li>
+					<li>
+						<a href="#" class="nav-link" data-toggle="tooltip" data-placement="top" title="通知">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+								class="bi bi-bell" viewBox="0 0 16 16">
+								<path
+									d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- ----------------------------------------------------- -->
+	<!-- 橫的導覽列 -->
+	<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+		<a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+			<svg class="bi me-2" width="40" height="32">
+				<use xlink:href="#bootstrap"></use>
+			</svg>
+			<span class="fs-4">Sidebar</span>
+		</a>
+		<hr>
+		<ul class="nav nav-pills flex-column mb-auto">
+			<li class="nav-item">
+				<a href="#" class="nav-link active" aria-current="page">
+					<svg class="bi me-2" width="16" height="16">
+						<use xlink:href="#home"></use>
+					</svg>
+					1
+				</a>
+			</li>
+			<li>
+				<a href="#" class="nav-link text-white">
+					<svg class="bi me-2" width="16" height="16">
+						<use xlink:href="#speedometer2"></use>
+					</svg>
+					2
+				</a>
+			</li>
+			<li>
+				<a href="#" class="nav-link text-white">
+					<svg class="bi me-2" width="16" height="16">
+						<use xlink:href="#table"></use>
+					</svg>
+					3
+				</a>
+			</li>
+			<li>
+				<a href="#" class="nav-link text-white">
+					<svg class="bi me-2" width="16" height="16">
+						<use xlink:href="#grid"></use>
+					</svg>
+					4
+				</a>
+			</li>
+			<li>
+				<a href="#" class="nav-link text-white">
+					<svg class="bi me-2" width="16" height="16">
+						<use xlink:href="#people-circle"></use>
+					</svg>
+					5
+				</a>
+			</li>
+		</ul>
+		<hr>
+		<div class="dropdown">
+			<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+				id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+				<img src="" alt="#" width="32" height="32" class="rounded-circle me-2">
+				<strong>Kevin</strong>
+			</a>
+			<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+				<li><a class="dropdown-item" href="#">New project...</a></li>
+				<li><a class="dropdown-item" href="#">Settings</a></li>
+				<li><a class="dropdown-item" href="#">Profile</a></li>
+				<li>
+					<hr class="dropdown-divider">
+				</li>
+				<li><a class="dropdown-item" href="#">Sign out</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- ----------------------------------------------------- -->
 
-  <!-- 變小 -->
-  <link rel="stylesheet" href="/calendar/style.css">
-  <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          var calendarEl = document.getElementById('calendar');
-          var calendar = new FullCalendar.Calendar(calendarEl, {
-              initialView: 'dayGridMonth',
-              height:600,
-              locale:'zh-TW',
-              navLinks:true,
-              headerToolbar:{
-                  left:'prev,next today',
-                  center:'title',
-                  right:'dayGridMonth,timeGridWeek,timeGridDay'
-              }, 
-              events:[
-                  {
-                  title:'開團',
-                  start:'2021-08-10',
-                  end:'2021-08-15'
-                  }
-              ]
-          });
-    
+	<!-- 變小 -->
+	<link rel="stylesheet" href="/calendar/style.css">
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var calendarEl = document.getElementById('calendar');
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				initialView: 'dayGridMonth',
+				height: 600,
+				locale: 'zh-TW',
+				navLinks: true,
+				headerToolbar: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'dayGridMonth,timeGridWeek,timeGridDay'
+				},
+				events: [{
+					title: '開團',
+					start: '2021-08-10',
+					end: '2021-08-15'
+				}]
+			});
 
-          calendar.render();
-      });
 
-  </script>
+			calendar.render();
+		});
+	</script>
 
-  <div class="container">
-      <div id='calendar'></div>
-  </div>
+	<div class="container">
+		<div id='calendar'></div>
+	</div>
 
 
 
 
-  </body>
+</body>
+
 </html>

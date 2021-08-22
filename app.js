@@ -16,7 +16,7 @@ app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded({extended: false}) );
 
 // Web 伺服器的靜態檔案置於 public 資料夾
-app.use( express.static( "public" ) );
+app.use(express.static("public"));
 
 //使用bootstrap並放於public
 //用虛擬路徑lib來取代'node_modules'

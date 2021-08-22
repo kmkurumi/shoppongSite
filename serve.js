@@ -1,81 +1,57 @@
-//  1. 載入Node.js原生模組
-//http：
-const http = require("http");
-//操作實體檔案，可以同步或非同步存取檔案系統操作
-const fs = require("fs");
-//網址後?為填入參數
-const qs = require("querystring");
+// 以 Express 建立 Web 伺服器
+var express = require("express");
+// var exphbs = require('express-handlebars');
+var engine = require('ejs-locals');
 
-const port = 3000;
-const host = "127.0.0.1";
+var app = express();
 
-//回傳
+// setting template engine
+//範本檔所在的目錄
+app.engine('ejs', engine)
+//要使用的範本引擎
+app.set('view engine', 'ejs')
+
+// 以 body-parser 模組協助 Express 解析表單與JSON資料
+var bodyParser = require('body-parser');
+app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded({extended: false}) );
+
+// Web 伺服器的靜態檔案置於 public 資料夾
+app.use(express.static("public"));
+
+//使用bootstrap並放於public
+//用虛擬路徑lib來取代'node_modules'
+// app.use("/lib",express.static(path.join(__dirname, 'node_modules')));
+
+// 以 express-session 管理狀態資訊
+var session = require('express-session');
+app.use(session({
+    secret: 'secretKey',
+    resave: false,
+    saveUninitialized: true
+}));
+
+// 指定 esj 為 Express 的畫面處理引擎
+// Embedded Javascript」，顧名思義就是內嵌式的樣板引擎，可以將邏輯與內容直接嵌入到 HTML 頁面上
+// view engine 我們宣告為 ejs，而 view engine 的樣板不只有 ejs，還有 hbs、hjs、jade、pug、twig、vash
+// 如果你是使用 Express 應用程式產生器(express - generator)設置工作環境的話，預設的 view engine 將為 jade
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+app.set('views', __dirname + '/view');
+
+// 一切就緒，開始接受用戶端連線
+// app.listen(process.env.PORT);
+app.listen(80);
+console.log("Web伺服器就緒，開始接受用戶端連線.");
+console.log("鍵盤「Ctrl + C」可結束伺服器程式.");
 
 
-// 2. 建立server
-const server = http.createServer((request, response) => {
-    // 在此處理 客戶端向 http server 發送過來的 req
-    const method = request.method;
-    let url = request.url;
-    if (url == "/register") {
-        console.log("url:" + url + " method:" + method);
-    
-  }
+//連線異常報錯
+connection.connect(function(err) {
+	// if (err) throw err;
+	if (err) {
+		console.log(JSON.stringify(err));
+		return;
+	}
+});
 
-
-})
-
-
-// 為server物件，呼叫 listen()
-//會在createServer()執行時，讓你決定要監聽哪一個port，並且開始監聽任何進來的requests
-
-
-
-
-// const sendResponse = (filename, statusCode, response) => {
-//   fs.readFile(`./html/${filename}`, (error, data) => {
-//     if (error) {
-//       response.statusCode = 500;
-//       response.setHeader("Content-Type", "text/plain");
-//       response.end("Sorry, internal error");
-//     } else {
-//       response.statusCode = statusCode;
-//       response.setHeader("Content-Type", "text/html");
-//       response.end(data);
-//     }
-//   });
-// };
-
-// const server = http.createServer((request, response) => {
-//   const method = request.method;
-//   let url = request.url;
-
-//   if (method === "GET") {
-//     const requestUrl = new URL(url, `http://${ip}:${port}`);
-//     url = requestUrl.pathname;
-//     const lang = requestUrl.searchParams.get("lang");
-//     let selector;
-
-//     if (lang === null || lang === "en") {
-//       selector = "";
-//     } else if (lang === "zh") {
-//       selector = "-zh";
-//     } else {
-//       selector = "";
-//     }
-
-//     if (url === "/") {
-//       sendResponse(`index${selector}.html`, 200, response);
-//     } else if (url === "/about.html") {
-//       sendResponse(`about${selector}.html`, 200, response);
-//     } else {
-//       sendResponse(`404${selector}.html`, 404, response);
-//     }
-//   } else {
-
-//   }
-// });
-
-// server.listen(port, ip, () => {
-//   console.log(`Server is running at http://${ip}:${port}`);
-// });
