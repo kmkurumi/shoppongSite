@@ -1,6 +1,14 @@
 // 以 Express 建立 Web 伺服器
 var express = require("express");
+var exphbs = require('express-handlebars');
+
 var app = express();
+
+// setting template engine
+//範本檔所在的目錄
+// app.engine('handlebars', exphbs('defaultLayout: main'))
+//要使用的範本引擎
+// app.set('view engine', 'handlebars')
 
 // 以 body-parser 模組協助 Express 解析表單與JSON資料
 var bodyParser = require('body-parser');
@@ -59,7 +67,7 @@ connection.connect(function(err) {
 //app.method(url,callback)
 app.get("/home/news", function (request, response) {
 
-	connection.query('select * from members', 
+	connection.query('select Id,Name,Phone,Email from members', 
 		'',
 		function(err, rows) {
 			if (err)	{
@@ -75,11 +83,11 @@ app.get("/home/news", function (request, response) {
 //增加：create(不需要id）
 app.post("/home/news", function (request, response) {
 	connection.query(
-		"insert into members set name = ?, phone = ? ,email = ? "
+		"insert into members set Name = ?, Phone = ? ,Email = ? "
 			[
-				request.body.name, 
-				request.body.phone,
-				request.body.email
+				request.body.Name, 
+				request.body.Phone,
+				request.body.Email
 
 			]);
 	response.send("row inserted.");
@@ -88,12 +96,12 @@ app.post("/home/news", function (request, response) {
 
 app.put("/home/news", function (request, response) {
 	connection.query(
-		"update members set name = ?, phone = ? ,email = ? where Id = "
+		"update members set Name = ?, Phone = ? ,Email = ? where Id = "
 		    + request.body.Id, 
 			[
-				request.body.name, 
-				request.body.phone,
-				request.body.email
+				request.body.Name, 
+				request.body.Phone,
+				request.body.Email
 			]);
 	response.send("row updated.");  
 })

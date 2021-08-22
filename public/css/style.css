@@ -56,11 +56,14 @@ body {
 }
 
 @media (min-width: 991.98px) {
-  .tansetting {
+  .tansetting{
     width: 60%;
   }
   .tanregister {
     width: 60%;
   }
+  /* .databaseShow{
+    width: 80%;
+  } */
 }
 /*# sourceMappingURL=style.css.map */

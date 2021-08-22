@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <h2>會員資料 <span class="pull-right"><button id="newItem" class="btn btn-success btn-sm"><span
-                                class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></span></h2>
+                        class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></span></h2>
                 <ul id="latestNews" class="list-group">
                     //資料欄位
                     <li class="list-group-item">First item
@@ -189,11 +189,12 @@
                 $("#latestNews").empty();
                 membersList.forEach(function (member) {
                     //變數用於jquery，顯示的東西
-                    let liText = `${member.name} [${member.phone}] [${member.email}]`;
+                    let listText = `${member.name} [${member.phone}] [${member.email}]`;
                     // alert(liText);
                     //jquery物件用於jquery
-                    let $li = $("<li></li>");
-                    $li.text(liText);
+                    let $list = $("<li></li>");
+                    //<li>text</li>
+                    $list.text(listText);
                     $li.addClass("list-group-item");
                     //要用''，因為"pull-right"...
                     $li.append(
