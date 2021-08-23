@@ -1,0 +1,375 @@
+<% layout('layout') %>
+<!-- ------------------------------------------------------------------------------------ -->   
+    <!-- 投影片架構 -->
+    <div class="container indexContent pt-3">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slideshow" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <!-- 圖片投影 元件1-->
+                <div class="carousel-inner">
+                    <!-- 第一張圖片 -->
+                    <!-- active:第一張被選到 -->
+                    <div class="carousel-item active">
+                        <img class="slide-pic d-block w-100" src="https://picsum.photos/1000/400" alt="slide1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>廣告1</h2>
+                        </div>
+                    </div>
+                    <!-- 第二張圖片 -->
+                    <div class="carousel-item">
+                        <img class="slide-pic d-block w-100"" src="https://picsum.photos/1000/400" alt="slide2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>廣告2</h2>
+                        </div>    
+                    </div>
+                    <!-- 第三張圖片 -->
+                    <div class="carousel-item">
+                        <img class="slide-pic d-block w-100"" src="https://picsum.photos/1000/400" alt="slide3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>廣告3</h2>
+                        </div>    
+                    </div>
+                </div>
+                <!-- 左右按鈕  元件2-->
+                <!-- 左邊按鈕 :prev -->
+                <!-- data-bs-:bs5的jquery -->
+                <button class="carousel-control-prev ms-5" type="button" data-bs-target="#slideshow" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                    <!-- 右邊按鈕  -->
+                <button class="carousel-control-next me-5" type="button" data-bs-target="#slideshow" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+
+                <!-- 指示按鈕  元件3-->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#slideshow" data-bs-slide-to="0" class="active">
+
+                    </button>
+                    <button type="button" data-bs-target="#slideshow" data-bs-slide-to="1">
+
+                    </button> 
+                    <button type="button" data-bs-target="#slideshow" data-bs-slide-to="2">
+                    </button>
+                </div>
+            </div>
+        </div> 
+    </div>
+<!-- ------------------------------------------------------------------------------------ -->             
+        <div class="row">    
+            <div class="col-sm-12">    
+                <div class="d-flex bg-secondary text-white">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio1">開團中</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio2">已成團</label>
+                        
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio3">熱門商品</label>               
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+                
+
+
+
+<!-- ------------------------------------------------------------------------------------ -->
+    <!-- 卡片欄位 -->
+    <!-- 不要用格線系統 -->
+    <div class="row mt-3">
+        <div class="col-12 bg-light">
+            <i class="bi bi-truck "></i>
+            <!-- 吐司訊息 -->
+            <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">點我開始</button>
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img src="..." class="rounded me-2" alt="...">
+                        <strong class="me-auto">Bootstrap</strong>
+                        <small>11 mins ago</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        開始
+                    </div>
+                </div>
+            </div> -->
+        </div>    
+    </div>  
+    <section class="d-flex justify-content-center"> 
+        <div class="container bg-light text-center m-5 p-5 d-flex flex-wrap ">
+            <div class="card">
+                <div class="product-imgs">
+                    <img class="product-img img-fluid" src="../public/img/products/umaibou.png" alt="umaibou">
+                </div>            
+                <div class="card-body">
+                    <h5 class="card-title">好吃棒</h5>
+                    <p class="card-text originalPrice text-decoration-underline">原價: <span>100</span></p>
+                    <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                    <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                    <span><a class="btn btn-primary"type="button" href="#">購買</a></span>                         
+                </div>
+            </div>
+            <div class="card">
+                <div class="product-imgs">
+                    <img class="product-img img-fluid" src="../public/img/products/umaibou.png" alt="umaibou">
+                </div>  
+                <div class="card-body">
+                    <h5 class="card-title">好吃棒</h5>
+                    <p class="card-text originalPrice">原價: <span>100</span></p>
+                    <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                    <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                    <span><a class="btn btn-primary"type="button" href="#">購買</a></span>                         
+                </div>
+            </div>
+            <div class="card">
+                <div class="product-imgs">
+                    <img class="product-img img-fluid" src="../public/img/products/umaibou.png" alt="umaibou">
+                </div>  
+                <div class="card-body">
+                    <h5 class="card-title">好吃棒</h5>
+                    <p class="card-text originalPrice">原價: <span>100</span></p>
+                    <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                    <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                    <span><a class="btn btn-primary"type="button" href="#">購買</a></span>                         
+                </div>
+            </div>
+            <div class="card">
+                <div class="product-imgs">
+                    <img class="product-img img-fluid" src="../public/img/products/umaibou.png" alt="umaibou">
+                </div>  
+                <div class="card-body">
+                    <h5 class="card-title">好吃棒</h5>
+                    <p class="card-text originalPrice">原價: <span>100</span></p>
+                    <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                    <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                    <span><a class="btn btn-primary"type="button" href="#">購買</a></span>                         
+                </div>
+            </div>
+            <div class="card">
+                <div class="product-imgs">
+                    <img class="product-img img-fluid" src="../public/img/products/umaibou.png" alt="umaibou">
+                </div>  
+                <div class="card-body">
+                    <h5 class="card-title">好吃棒</h5>
+                    <p class="card-text originalPrice">原價: <span>100</span></p>
+                    <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                    <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                    <span><a class="btn btn-primary"type="button" href="#">購買</a></span>                         
+                </div>
+            </div>
+            <div class="card">
+                <div class="product-imgs">
+                    <img class="product-img img-fluid" src="../public/img/products/umaibou.png" alt="umaibou">
+                </div>  
+                <div class="card-body">
+                    <h5 class="card-title">好吃棒</h5>
+                    <p class="card-text originalPrice">原價: <span>100</span></p>
+                    <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                    <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                    <span><a class="btn btn-primary"type="button" href="#">購買</a></span>                         
+                </div>
+            </div>
+            <div class="card">
+                <div class="product-imgs">
+                    <img class="product-img img-fluid" src="../public/img/products/umaibou.png" alt="umaibou">
+                </div>  
+                <div class="card-body">
+                    <h5 class="card-title">好吃棒</h5>
+                    <p class="card-text originalPrice">原價: <span>100</span></p>
+                    <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                    <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                    <span><a class="btn btn-primary"type="button" href="#">購買</a></span>                         
+                </div>
+            </div>
+            <div class="card">
+                <div class="product-imgs">
+                    <img class="product-img img-fluid" src="../public/img/products/umaibou.png" alt="umaibou">
+                </div>  
+                <div class="card-body">
+                    <h5 class="card-title">好吃棒</h5>
+                    <p class="card-text originalPrice">原價: <span>100</span></p>
+                    <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                    <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                    <span><a class="btn btn-primary"type="button" href="#">購買</a></span>                         
+                </div>
+            </div>
+            <div class="card">
+                <div class="product-imgs">
+                    <img class="product-img img-fluid" src="../public/img/products/umaibou.png" alt="umaibou">
+                </div>  
+                <div class="card-body">
+                    <h5 class="card-title">好吃棒</h5>
+                    <p class="card-text originalPrice">原價: <span>100</span></p>
+                    <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                    <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                    <span><a class="btn btn-primary"type="button" href="#">購買</a></span>                         
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 頁數 -->
+    <section>
+        <nav class="justify-content-center" aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+<!-- ------------------------------------------------------------------------------------ --> 
+    <!-- footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>關於我們</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>XXX團購
+                        </h6>
+                        <p>
+                            升級一笑留下日韓好看網絡毫不對外，突破猶豫我覺得工程師不能，你怎不來喜愛再次一切都資訊網，
+                            西方從來沒大家都則是，需要求職附近看著目錄玄幻實用就要土地鮮花
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            運送
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">7-11</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">全家</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">萊爾富</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">OK</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            金流
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">信用卡</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">面交</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">xxx</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">xxx</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            聯繫我們
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> 台中市大里區</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> (04)1234-5678</p>
+                        <p><i class="fas fa-print me-3"></i> (09)12-345-678</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            網站:
+            <a class="text-reset fw-bold" href="#">XXXbuy.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+<!-- ------------------------------------------------------------------------------------ -->  
+    <script>
+        var igoogle = document.getElementsByClassName("igoogle")[0];
+        igoogle.addEventListener("mouseenter",fgooglein);
+        function fgooglein(){
+            igoogle.innerHTML='<img src="./img/icon/Google__G__Logo.svg.png">';
+        }
+
+        igoogle.addEventListener("mouseout",fgoogleout);
+        function fgoogleout(){
+            igoogle.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16"><path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/></svg>';
+        }
+        
+    </script>

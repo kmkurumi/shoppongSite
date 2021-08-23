@@ -15,10 +15,14 @@
 <!-- “rel=stylesheet”，link在文档初始化时将被使用 -->
 <link  href="../public/css/all.css" rel="stylesheet">
 <link  href="../public/css/style.css" rel="stylesheet">
-<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../public/js/bootstrap.js"></script>
+
 
 <!-- bootstrap-icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+<!-- register：地址 -->
+<script src="../public/js/tw-city-selector.js"></script>
 
 <style>
     *{margin: 0; padding: 0}
@@ -54,7 +58,7 @@
                 <!-- 列出內容 -->
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/home" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
                                 <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
                             </svg>
@@ -67,10 +71,10 @@
                         </a>
                     </li> -->
                     <li class="nav-item">
-                        <a href="./tanstart.html" class="nav-link">開團</a>
+                        <a href="/home/tanstart" class="nav-link">開團</a>
                     </li>
                     <li class="nav-item">
-                        <a href="./tansetting.html" class="nav-link">我的賣場</a>
+                        <a href="/home/tanstart" class="nav-link">我的賣場</a>
                     </li>
                 </ul>
                 <!-- 列出到右邊 -->
@@ -81,7 +85,7 @@
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link"href="#" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">會員登入</a>
+                        <a class="nav-link" href="/home/login" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">會員登入</a>
                     </li>
                     <li>
                         <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top" title="通知">
@@ -90,12 +94,7 @@
                             </svg>
                         </a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" disabled href="#" tabindex="-1" aria-disabled="true" data-toggle="tooltip" data-placement="top" title="請先成為團長">
-                            我要開團
-                        </a>
-                    </li> -->
-                </ul>
+                </ul> 
 <!-- ------------------------------------------------------------------------------------ -->
                 <!-- 跳出視窗內容 ，id=data-bs-target-->
                 <div class="modal fade" id="loginModal">
@@ -109,21 +108,21 @@
                             <!-- Body -->
                             <div class="modal-body">
                                 <!-- 登入表單 -->
-                                <form method="GET" action="/login">
+                                <form method="GET" action="/home/login">
                                     <!-- email -->
                                     <div class="form-group mb-3">
-                                        <input type="email" class="account form-control" placeholder="請輸入帳號">                          
+                                        <input id="accountInsert" type="email" class="account form-control" placeholder="請輸入帳號">                          
                                     </div>
                                     <!-- password -->
                                     <div class="form-group mb-3">
-                                        <input type="password" class="password form-control"placeholder="請輸入密碼">                          
+                                        <input id="passwordInsert" type="password" class="password form-control"placeholder="請輸入密碼">                          
                                     </div>
                                     <!-- checkbox -->
                                     <div class="form-group mb-3">
                                         <input type="checkbox" class="remember"> 記住我                         
                                     </div>
                                     <!-- 送出按鈕 -->
-                                        <button type="button" class="btn btn-primary">登入</button>                                    
+                                        <a id="loginbtn" href="/home/login" type="button" class="btn btn-primary">登入</a>                                    
                                 </form>
                             </div>
                             <!-- Footer -->    
@@ -137,7 +136,6 @@
                                             </svg> 
                                         </a>    
                                     </div>
-
                                     <div>
                                         <a href="#" class="igoogle">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
@@ -145,8 +143,7 @@
                                             </svg> 
                                         </a>    
                                     </div>
-                                </div>
-                                
+                                </div>                              
                                 <!-- <div>
                                     <a href="#">
                                         <img src="./img/icon/Google__G__Logo.svg.png">
@@ -155,19 +152,49 @@
                                 </div> -->
                                 <div class="singup">
                                     <span>尚未註冊</span>
-                                    <a href="./register copy.html" type="button" class="member">立即加入</a>
+                                    <a href="/home/register" type="button" class="member">立即加入</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div> 
-<!-- ------------------------------------------------------------------------------------ -->                 
+                </div>                
             </div>
         </div>
     </nav>
+    <!-- ------------------------------------------------------------------------------------ -->
+    <script type="text/javascript" src="../public/js/jquery.js"></script>
 
-    <%- body %>
+    <script>
+    $(function () {
+
+        var loginModal = new bootstrap.Modal(document.getElementById('loginModal'), {
+            keyboard: false
+        })
+
+        $("#loginbtn").on("click", function () {
+            loginModal.hide();
+            console.log("success");
+            var dataToServer = {
+                Account: $("#accountInsert").prop("value"),
+                Password: $("#passwordInsert").val(),
+            }
+            $.ajax({
+                type: "get",
+                url: "/home/login",
+                data: dataToServer
+            }).then(function (e) {
+                //更新
+                membersList = JSON.parse(e);
+                console.log("fail");
+            })
+        })
+    })
+    </script>
+
+
+    <!-- <%- body %> -->
 
 </body>
-    <%- script %>
+    <!-- register：亂碼 -->
+    <script src="../public/js/garbageGenerator.js"></script>
 </html>
