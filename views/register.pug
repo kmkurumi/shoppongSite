@@ -1,0 +1,89 @@
+.container-md.p-5.mt-5.bg-light.tanregister
+    //  input有required的都要填，格式須type來填
+    form(method='POST' action='/register')
+        .row
+            .col-sm-4.offset-1
+                h1
+                    strong 團長註冊
+            .col-sm-5.offset-1.mb-5
+                .accordion#accordionExample
+                    .accordion-item
+                        h2.accordion-header#headingOne
+                            button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='false' aria-controls='collapseOne').
+                                成為團長好處
+                        #collapseOne.accordion-collapse.collapse(aria-labelledby='headingOne' data-bs-parent='#accordionExample')
+                            .accordion-body
+                                ul
+                                    li
+                                        strong 開團權利
+                                    li
+                                        strong 成團後享有優惠
+            hr
+            //  第一列 
+            //  class="form-control"：bootstrap排版 
+            .row.mb-3
+                .col-sm-4
+                    label(for='firstName') 姓氏
+                    input.form-control#name(type='text' placeholder='姓氏' required)
+                .col-sm-4
+                    label(for='secondName') 名字
+                    input.form-control#secondName(type='text' placeholder='名字' required)
+                .col-sm-4
+                    label(for='accountName') 帳號名稱
+                    input.form-control#accountName(type='text' placeholder='帳號名稱' required)
+            //  第二列 
+            .row.mb-3
+                .col-sm-12
+                    label(for='account') 帳號
+                    input.form-control#account(type='email' placeholder='信箱' required)
+            //  第三列 
+            .row.mb-3
+                .col-sm-6
+                    label(for='password') 密碼
+                    input.form-control#password(type='password' placeholder='密碼' required)
+                .col-sm-6
+                    label(for='repassword') 密碼確認
+                    input.form-control#repassword(type='password' placeholder='請再次輸入密碼' required)
+            //  第四列 
+            .row.mb-3
+                .col-sm-6
+                    label(for='phoneNumber') 手機號碼
+                    input.form-control#phoneNumber(type='tel' placeholder='手機號碼' required)
+                .col-sm-6
+                    label(for='company') 公司電話
+                    input.form-control#company(type='tel' placeholder='可以不填')
+            //  第五列 
+            .row.mb-3
+                .col-sm-6
+                    label(for='birthday') 生日
+                    input.form-control#birthday(type='date' required)
+                //  <label> 元素的 for属性使用的id 
+                //  name為同一組 
+                .col-sm-6
+                    label(for='gender') 性別
+                    .col-sm-12.mt-3
+                        input#male.gender(type='radio' name='gender' required)
+                        label(for='male') 男性
+                        input#female.gender(type='radio' name='gender' required)
+                        label(for='female') 女性
+            //  第六列 
+            .row.mb-3
+                .col-sm-4
+                    label(for='address') 地址
+                    .col-sm-12
+                        //  可加入套用bs屬性：data-bootstrap-style 區域代碼：data-has-zipcode data-hidden-zipcode
+                        .my-style-selector(role='tw-city-selector')
+                .col-sm-3.offset-1
+                    label(for='verificationCode') 驗證碼
+                    input.form-control#verificationCode(type='text' placeholder='請輸入驗證碼' required)
+                .col-sm-4.mt-4
+                    span
+                        canvas#canvas(width='120' height='45')
+                        a#changeImg(href='#') 換一張
+            //  第七列 
+            .row.my-4
+                .col-sm-8.mb-5
+                    input.form-check-input#check(type='checkbox')
+                    label.form-check-label(for='check') 同意規範
+                .col-sm-3.offset-1
+                    button.btn.btn-primary(type='submit') 成為團長

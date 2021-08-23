@@ -1,0 +1,129 @@
+<% layout('layout') %>
+<!-- ------------------------------------------------------------------------------------ -->
+    <!-- 地址api：https://dennykuo.github.io/tw-city-selector/#/basic -->
+    <!-- npm install tw-city-selector -->
+    <script>
+        new TwCitySelector();
+    </script>
+<!-- ------------------------------------------------------------------------------------ -->  
+    <div class="container-md p-5 mt-5 bg-light tanregister">
+        <!-- input有required的都要填，格式須type來填-->
+        <form method="POST" action="/register">
+            <div class="row">
+                <div class="col-sm-4 offset-1">
+                    <h1><strong>團長註冊</strong></h1>
+                </div>
+                <div class="col-sm-5 offset-1 mb-5">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    成為團長好處
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>開團權利</strong></li>
+                                    <li><strong>成團後享有優惠</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><hr>          
+            <!-- 第一列 -->
+            <!-- class="form-control"：bootstrap排版 -->
+            <div class="row mb-3 ">
+                <div class="col-sm-4">
+                    <label for="firstName">姓氏</label>
+                    <input type="text" class="form-control" id="name" placeholder="姓氏" required>
+                </div>
+                <div class="col-sm-4">
+                    <label for="secondName">名字</label>
+                    <input type="text" class="form-control" id="secondName" placeholder="名字" required>
+                </div>
+                <div class="col-sm-4">
+                    <label for="accountName">帳號名稱</label>
+                    <input type="text" class="form-control" id="accountName" placeholder="帳號名稱" required>
+                </div>
+            </div>
+            <!-- 第二列 -->
+            <div class="row mb-3">
+                <div class="col-sm-12">
+                    <label for="account">帳號</label>
+                    <input type="email" class="form-control" id="account" placeholder="信箱" required>
+                </div>
+            </div>
+            <!-- 第三列 -->
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label for="password">密碼</label>
+                    <input type="password" class="form-control" id="password" placeholder="密碼" required>
+                </div>
+                <div class="col-sm-6">
+                    <label for="repassword">密碼確認</label>
+                    <input type="password" class="form-control" id="repassword" placeholder="請再次輸入密碼" required>
+                </div>
+            </div>
+            <!-- 第四列 -->
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label for="phoneNumber">手機號碼</label>
+                    <input type="tel" class="form-control" id="phoneNumber" placeholder="手機號碼" required>
+                </div>
+                <div class="col-sm-6">
+                    <label for="company">公司電話</label>
+                    <input type="tel" class="form-control" id="company" placeholder="可以不填">
+                </div>          
+            </div>
+            <!-- 第五列 -->
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label for="birthday">生日</label>
+                    <input type="date" class="form-control" id="birthday" required>
+                </div>
+                <!-- <label> 元素的 for属性使用的id -->
+                <!-- name為同一組 -->
+                <div class="col-sm-6">
+                    <label for="gender">性別</label>
+                    <div class="col-sm-12 mt-3">                       
+                        <input type="radio" id="male" name="gender" class="gender" required>
+                        <label for="male">男性</label>
+                        <input type="radio" id="female" name="gender" class="gender" required>
+                        <label for="female">女性</label>  
+                    </div>  
+                </div>
+            </div>
+            <!-- 第六列 -->
+            <div class="row mb-3">
+                <div class="col-sm-4">
+                    <label for="address">地址</label>
+                    <div class="col-sm-12">
+                        <!-- 可加入套用bs屬性：data-bootstrap-style 區域代碼：data-has-zipcode data-hidden-zipcode-->
+                        <div role="tw-city-selector" class="my-style-selector"></div>
+                    </div>
+                </div>
+                <div class="col-sm-3 offset-1">
+                    <label for="verificationCode">驗證碼</label>
+                    <input type="text" class="form-control" id="verificationCode" placeholder="請輸入驗證碼" required>
+                </div>
+                <div class="col-sm-4 mt-4">
+                    <span>
+                        <canvas id="canvas" width="120" height="45"></canvas>
+                        <a href="#" id="changeImg">換一張</a>
+                    </span>
+                </div>                 
+            </div>
+            <!-- 第七列 -->
+            <div class="row my-4">
+                <div class="col-sm-8 mb-5">
+                    <input class="form-check-input" type="checkbox" id="check">
+                    <label class="form-check-label" for="check">同意規範</label>
+                </div>
+                <div class="col-sm-3 offset-1">
+                    <button type="submit" class="btn btn-primary">成為團長</button>
+                </div>
+            </div>       
+        </form>
+    </div>

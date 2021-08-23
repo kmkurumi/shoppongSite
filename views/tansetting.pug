@@ -1,0 +1,151 @@
+
+	style.
+		/* div{
+		border: 2px solid black
+		} */
+		.container{
+		width: 60%;
+		}
+	// 基本資訊
+	.container-md.p-5.mt-5.bg-light.tansetting
+		form.ps-5(action='')
+			.row.mb-3
+				h1
+					strong 基本資訊
+				hr
+			.row.mb-3
+				.col-sm-8
+					label(for='phone') 商品名稱
+					input#phone.form-control(type='tel' placeholder='商品名稱')
+			.row.mb-3
+				.col-sm-8
+					label.form-label(for='formFile') 上傳商品圖
+					input#formFile.form-control(type='file')
+			.row.mb-3
+				.col-sm-8
+					select.form-select.mb-3(aria-label='.form-select-lg example')
+						option(selected='') 商品種類
+						option(value='1') 食物
+						option(value='2') 用品
+						option(value='3') 飲料
+			.row.mb-3
+				.col-sm-8
+					label(for='brand') 品牌
+					input#brand.form-control(type='text' "='')
+			.row.mb-3
+				.col-sm-8
+					label(for='name') 產地
+					input#name.form-control(type='text')
+			.row.mb-3
+				.col-sm-8
+					label.form-label(for='exampleFormControlTextarea1') 商品簡介
+					textarea#exampleFormControlTextarea1.form-control(rows='7')
+	// ---------------------------------------------------------------------
+	// 銷售資訊
+	.container-md.p-5.mt-5.bg-light.tansetting
+		form.ps-5(action='')
+			.row.mb-3
+				h1
+					strong 銷售資訊
+				hr
+			.row.mb-3
+				.col-sm-8
+					span.input-group-text $
+					input.form-control(type='text' aria-label='First name' placeholder='價格')
+			.row.mb-3
+				.col-sm-8
+					span.input-group-text @
+					input.form-control(type='text' aria-label='First name' placeholder='數量')
+	// ---------------------------------------------------------------------
+	// 運費
+	.container-md.p-5.mt-5.bg-light.tansetting
+		form.ps-5(action='')
+			.mb-3
+				h1
+					strong 運費
+			hr
+			.row.mb-3
+				.col-sm-8
+					label(for='brand') 重量
+					input#brand.form-control(type='text' placeholder='輸入公克')
+			.row.mb-3
+				.col-sm-8
+					label(for='brand') 尺寸
+					.col-sm-8.input-group
+						input#brand.form-control(type='text' placeholder='輸入長')
+						input#brand.form-control(type='text' placeholder='輸入寬')
+						input#brand.form-control(type='text' placeholder='輸入高')
+			.row.mb-3
+				.col-sm-8.input-group
+					span.input-group-text 7-11
+					.form-check.form-switch.mx-2
+						svg.bi.bi-pencil-square(xmlns='http://www.w3.org/2000/svg' width='20' height='20' data-bs-toggle='modal' data-bs-target='.deliveryFee' fill='currentColor' viewBox='0 0 16 16')
+							path(d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z')
+							path(fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z')
+						label.form-check-label(for='delivery1')  運費：60
+						input#delivery1.form-check-input(type='checkbox')
+			.row.mb-3
+				.col-sm-8.input-group
+					span.input-group-text 全家
+					.form-check.form-switch.mx-2
+						svg.bi.bi-pencil-square(xmlns='http://www.w3.org/2000/svg' width='20' height='20' data-bs-toggle='modal' data-bs-target='.deliveryFee' fill='currentColor' viewBox='0 0 16 16')
+							path(d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z')
+							path(fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z')
+						label.form-check-label(for='delivery2')  運費：60
+						input#delivery2.form-check-input(type='checkbox')
+			.row.mb-3
+				.col-sm-8.input-group
+					span.input-group-text 萊爾富
+					.form-check.form-switch.mx-2
+						svg.bi.bi-pencil-square(xmlns='http://www.w3.org/2000/svg' width='20' height='20' data-bs-toggle='modal' data-bs-target='.deliveryFee' fill='currentColor' viewBox='0 0 16 16')
+							path(d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z')
+							path(fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z')
+						label.form-check-label(for='delivery3')  運費：60
+						input#delivery3.form-check-input(type='checkbox')
+			.row.mb-3
+				.col-sm-8.input-group
+					span.input-group-text OK
+					.form-check.form-switch.mx-2
+						svg.bi.bi-pencil-square(xmlns='http://www.w3.org/2000/svg' width='20' height='20' data-bs-toggle='modal' data-bs-target='.deliveryFee' fill='currentColor' viewBox='0 0 16 16')
+							path(d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z')
+							path(fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z')
+						label.form-check-label(for='delivery4')  運費：60
+						input#delivery4.form-check-input(type='checkbox')
+			.row.mb-3
+				.col-sm-8.input-group
+					span.input-group-text 面交
+					.form-check.form-switch.mx-2
+						label.form-check-label(for='delivery5')  運費：0
+						input#delivery5.form-check-input(type='checkbox')
+			.row.mb-3
+				.col-sm-8
+					label.form-label(for='exampleFormControlTextarea1') 備註
+					textarea#exampleFormControlTextarea1.form-control(rows='5')
+			.d-grid.justify-content-end
+				a.btn.btn-primary.me-5.btn-lg(type='button') 送出
+	// ---------------------------------------------------------------------
+	// 跳出視窗內容 ，id=data-bs-target
+	.modal.fade.deliveryFee
+		.modal-dialog.modal-dialog-centered
+			.modal-content.bg-light.modal-content
+				// Header
+				.modal-header.text-center
+					h3 運費
+					button.btn-close(type='button' data-bs-dismiss='modal')
+				// Body
+				.modal-body
+					// 
+					form(action='#')
+						h5
+							| 運費NT 
+							span 60(打勾變成0 或修改)
+						// 會變
+						.form-group.mb-3
+							input.remember(type='checkbox')
+							|  我願意負擔運費
+						// 送出按鈕
+						button.btn.btn-primary.ms-auto(type='button') 確認
+				// Footer
+				.modal-footer
+					.singup
+	// ---------------------------------------------------------------------
