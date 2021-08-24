@@ -24,6 +24,12 @@
 <!-- register：地址 -->
 <script src="../public/js/tw-city-selector.js"></script>
 
+<!-- tansetting：導入日曆 -->
+<link href='../public/css/calendar.css' rel='stylesheet' />
+<script src='../public/js/calendar.js'></script>
+<!-- 轉換成中文 -->
+<script src="../public/js/locales-all.js"></script>
+
 <style>
     *{margin: 0; padding: 0}
     body{
@@ -74,14 +80,20 @@
                         <a href="/home/tanstart" class="nav-link">開團</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/home/tanstart" class="nav-link">我的賣場</a>
+                        <a href="/home/tansetting" class="nav-link">我的賣場</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/home/commodity" class="nav-link">商品</a>
                     </li>
                 </ul>
                 <!-- 列出到右邊 -->
                 <!-- d-flex:較短，但中文會無法以一行呈現 -->
                 <form class="input-group product-search ms-auto" style="width: 300px;">
                     <input class="form-control"  type="search"placeholder="搜尋文字">
-                    <button class="btn btn-primary" type="submit">搜尋</button>
+                    <button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                        </button>
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -108,7 +120,7 @@
                             <!-- Body -->
                             <div class="modal-body">
                                 <!-- 登入表單 -->
-                                <form method="GET" action="/home/login">
+                                <form method="get" action="/data/login">
                                     <!-- email -->
                                     <div class="form-group mb-3">
                                         <input id="accountInsert" type="email" class="account form-control" placeholder="請輸入帳號">                          
@@ -166,14 +178,16 @@
 
     <script>
     $(function () {
-
+        var membersList = [{
+            Account:"12@gmail.com",Password:"12345"
+        }];
         var loginModal = new bootstrap.Modal(document.getElementById('loginModal'), {
             keyboard: false
         })
 
         $("#loginbtn").on("click", function () {
             loginModal.hide();
-            console.log("success");
+            console.log(dataToServer);
             var dataToServer = {
                 Account: $("#accountInsert").prop("value"),
                 Password: $("#passwordInsert").val(),
@@ -185,9 +199,10 @@
             }).then(function (e) {
                 //更新
                 membersList = JSON.parse(e);
-                console.log("fail");
+                console.log(membersList);
             })
         })
+
     })
     </script>
 

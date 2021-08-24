@@ -8,7 +8,7 @@
 <!-- ------------------------------------------------------------------------------------ -->  
     <div class="container-md p-5 mt-5 bg-light tanregister">
         <!-- input有required的都要填，格式須type來填-->
-        <form method="POST" action="/register">
+        <form method="post" action="/data/register">
             <div class="row">
                 <div class="col-sm-4 offset-1">
                     <h1><strong>團長註冊</strong></h1>
@@ -37,29 +37,29 @@
             <div class="row mb-3 ">
                 <div class="col-sm-4">
                     <label for="firstName">姓氏</label>
-                    <input type="text" class="form-control" id="name" placeholder="姓氏" required>
+                    <input type="text" class="form-control" id="firstName" placeholder="姓氏" name="firstName" required>
                 </div>
                 <div class="col-sm-4">
                     <label for="secondName">名字</label>
-                    <input type="text" class="form-control" id="secondName" placeholder="名字" required>
+                    <input type="text" class="form-control" id="secondName" placeholder="名字" name="secondName">
                 </div>
                 <div class="col-sm-4">
                     <label for="accountName">帳號名稱</label>
-                    <input type="text" class="form-control" id="accountName" placeholder="帳號名稱" required>
+                    <input type="text" class="form-control" id="accountName" placeholder="帳號名稱" name="account" required>
                 </div>
             </div>
             <!-- 第二列 -->
             <div class="row mb-3">
                 <div class="col-sm-12">
-                    <label for="account">帳號</label>
-                    <input type="email" class="form-control" id="account" placeholder="信箱" required>
+                    <label for="account">信箱</label>
+                    <input type="email" class="form-control" id="account" placeholder="信箱" name="email" required>
                 </div>
             </div>
             <!-- 第三列 -->
             <div class="row mb-3">
                 <div class="col-sm-6">
                     <label for="password">密碼</label>
-                    <input type="password" class="form-control" id="password" placeholder="密碼" required>
+                    <input type="password" class="form-control" id="password" placeholder="密碼" name="password" required>
                 </div>
                 <div class="col-sm-6">
                     <label for="repassword">密碼確認</label>
@@ -70,18 +70,18 @@
             <div class="row mb-3">
                 <div class="col-sm-6">
                     <label for="phoneNumber">手機號碼</label>
-                    <input type="tel" class="form-control" id="phoneNumber" placeholder="手機號碼" required>
+                    <input type="tel" class="form-control" id="phoneNumber" placeholder="手機號碼" name="phone" required>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6"> 
                     <label for="company">公司電話</label>
-                    <input type="tel" class="form-control" id="company" placeholder="可以不填">
+                    <input type="tel" class="form-control" id="company" placeholder="可以不填" name="companyPhone">
                 </div>          
             </div>
             <!-- 第五列 -->
             <div class="row mb-3">
                 <div class="col-sm-6">
                     <label for="birthday">生日</label>
-                    <input type="date" class="form-control" id="birthday" required>
+                    <input type="date" class="form-control" id="birthday" name="birthday" required>
                 </div>
                 <!-- <label> 元素的 for属性使用的id -->
                 <!-- name為同一組 -->
@@ -104,7 +104,7 @@
                         <div role="tw-city-selector" class="my-style-selector"></div>
                     </div>
                 </div>
-                <div class="col-sm-3 offset-1">
+                <!-- <div class="col-sm-3 offset-1">
                     <label for="verificationCode">驗證碼</label>
                     <input type="text" class="form-control" id="verificationCode" placeholder="請輸入驗證碼" required>
                 </div>
@@ -113,7 +113,7 @@
                         <canvas id="canvas" width="120" height="45"></canvas>
                         <a href="#" id="changeImg">換一張</a>
                     </span>
-                </div>                 
+                </div>                  -->
             </div>
             <!-- 第七列 -->
             <div class="row my-4">
@@ -127,3 +127,36 @@
             </div>       
         </form>
     </div>
+    <!-- ------------------------------------------------------------------------------------ -->
+    <script type="text/javascript" src="../public/js/jquery.js"></script>
+
+    <script>
+    $(function () {
+        var membersList = [
+            {
+            Account:"12@gmail.com",Password:"12345"
+            }
+        ];
+        var loginModal = new bootstrap.Modal(document.getElementById('loginModal'), {
+            keyboard: false
+        })
+
+        $("#loginbtn").on("click", function () {
+            loginModal.hide();
+            console.log(dataToServer);
+            var dataToServer = {
+                Account: $("#accountInsert").prop("value"),
+                Password: $("#passwordInsert").val(),
+            }
+            $.ajax({
+                type: "get",
+                url: "/home/login",
+                data: dataToServer
+            }).then(function (e) {
+                //更新
+                membersList = JSON.parse(e);
+                console.log(membersList);
+            })
+        })
+
+    })

@@ -1,0 +1,18 @@
+<% layout('layout') %>
+<!-- ------------------------------------------------------------------------------------ -->   
+<h1>11111</h1>
+<div class="container">
+    <div class="row">
+        <!-- name，和label的for呼應，上傳資料的參數名稱 -->
+        <!-- text/plain類型 -->
+        <form action="/data/commodity" method="get" enctype="text/plain">
+            <input type="text" placeholder="get名稱" name="name">
+            <button class="btn btn-primary btn-sm">提交</button>
+        </form>
+
+        <form action="/data/commodity" method="post">
+            <input type="text" placeholder="post名稱" name="name">
+            <button class="btn btn-primary btn-sm">提交</button>
+        </form>
+    </div>
+</div>  
