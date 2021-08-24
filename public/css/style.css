@@ -55,15 +55,21 @@ body {
   margin: 0 0 3px 5px;
 }
 
+.commodityForm form input {
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.commodityForm form label {
+  margin: 0 0 3px 5px;
+}
+
 @media (min-width: 991.98px) {
-  .tansetting{
+  .tansetting {
     width: 60%;
   }
   .tanregister {
     width: 60%;
   }
-  /* .databaseShow{
-    width: 80%;
-  } */
 }
 /*# sourceMappingURL=style.css.map */

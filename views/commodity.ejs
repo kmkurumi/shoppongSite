@@ -1,18 +1,24 @@
 <% layout('layout') %>
-<!-- ------------------------------------------------------------------------------------ -->   
-<h1>11111</h1>
-<div class="container">
-    <div class="row">
-        <!-- name，和label的for呼應，上傳資料的參數名稱 -->
-        <!-- text/plain類型 -->
-        <form action="/data/commodity" method="get" enctype="text/plain">
-            <input type="text" placeholder="get名稱" name="name">
-            <button class="btn btn-primary btn-sm">提交</button>
-        </form>
-
-        <form action="/data/commodity" method="post">
-            <input type="text" placeholder="post名稱" name="name">
-            <button class="btn btn-primary btn-sm">提交</button>
-        </form>
-    </div>
-</div>  
+<!-- ------------------------------------------------------------------------------------ -->
+<!-- name，和label的for呼應，上傳資料的參數名稱 -->
+<!-- text/plain類型 -->
+<!-- <div class="container mt-3 bg-light commodityForm"> 
+    <form action="/data/commodity" method="get" enctype="text/plain" class="pt-3 ps-5">
+        <div class="form-group mb-3">
+            <input type="text" placeholder="get名稱" name="getname">
+            <button class="btn btn-primary" type="submit">get提交</button>
+        </div>
+        <hr>
+    </form>
+    <form action="/data/commodity" method="post" enctype="text/plain" class="pb-3 ps-5">
+        <div class="form-group">
+            <input type="text" placeholder="post名稱，會上傳資料" name="postname">
+            <button class="btn btn-primary" type="submit">post提交</button>
+        </div>
+        <hr>
+    </form>
+</div> -->
+<form action="/data/commodity" method="post" class="pb-3 ps-5">
+        <input type="text" placeholder="post名稱，會上傳資料" name="name">
+        <button class="btn btn-primary" type="submit">post提交</button>
+</form>

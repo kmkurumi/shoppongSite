@@ -77,7 +77,7 @@
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
-            height: 600,
+            height: 500,
             locale: 'zh-TW',
             navLinks: true,
             headerToolbar: {
@@ -96,6 +96,6 @@
     });
 </script>
 
-<div class="container">
+<div class="container my-5" id='calendarContainer'>
     <div id='calendar'></div>
 </div>

@@ -17,7 +17,6 @@
 <link  href="../public/css/style.css" rel="stylesheet">
 <script src="../public/js/bootstrap.js"></script>
 
-
 <!-- bootstrap-icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
@@ -25,7 +24,7 @@
 <script src="../public/js/tw-city-selector.js"></script>
 
 <!-- tansetting：導入日曆 -->
-<link href='../public/css/calendar.css' rel='stylesheet' />
+<link href='../public/css/calendar.css' rel='stylesheet'>
 <script src='../public/js/calendar.js'></script>
 <!-- 轉換成中文 -->
 <script src="../public/js/locales-all.js"></script>
@@ -35,7 +34,6 @@
     body{
         font-family: 'Noto Serif TC', serif;
     }
-
     @media (max-width:767.98px) {
         .navbar .product-search{
             width: 250px;
@@ -43,7 +41,6 @@
     }
 </style>
 </head>
-
 <body>
 <!-- ------------------------------------------------------------------------------------ -->
     <nav class="navbar navbar-expand-md navbar-dark  bg-dark p-3">
@@ -70,17 +67,11 @@
                             </svg>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="#" class="nav-link text-white">
-                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"></use></svg>
-                            Dashboard
-                        </a>
-                    </li> -->
                     <li class="nav-item">
                         <a href="/home/tanstart" class="nav-link">開團</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/home/tansetting" class="nav-link">我的賣場</a>
+                        <a href="/home/tansetting" class="nav-link">賣場</a>
                     </li>
                     <li class="nav-item">
                         <a href="/home/commodity" class="nav-link">商品</a>
@@ -97,7 +88,13 @@
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/home/login" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">會員登入</a>
+                        <a href="/home/shoppingcart" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home/login" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">登入</a>
                     </li>
                     <li>
                         <a href="#" class="nav-link" data-toggle="tooltip" data-placement="top" title="通知">
@@ -120,21 +117,21 @@
                             <!-- Body -->
                             <div class="modal-body">
                                 <!-- 登入表單 -->
-                                <form method="get" action="/data/login">
-                                    <!-- email -->
+                                <form method="post" action="/data/login">
+                                    <!-- account -->
                                     <div class="form-group mb-3">
-                                        <input id="accountInsert" type="email" class="account form-control" placeholder="請輸入帳號">                          
+                                        <input id="accountInsert" type="text" class="account form-control" placeholder="請輸入帳號" name="account">                          
                                     </div>
                                     <!-- password -->
                                     <div class="form-group mb-3">
-                                        <input id="passwordInsert" type="password" class="password form-control"placeholder="請輸入密碼">                          
+                                        <input id="passwordInsert" type="password" class="password form-control"placeholder="請輸入密碼" name="password">                          
                                     </div>
                                     <!-- checkbox -->
                                     <div class="form-group mb-3">
                                         <input type="checkbox" class="remember"> 記住我                         
                                     </div>
                                     <!-- 送出按鈕 -->
-                                        <a id="loginbtn" href="/home/login" type="button" class="btn btn-primary">登入</a>                                    
+                                        <button id="loginbtn" type="submit" class="btn btn-primary">登入</button>                                    
                                 </form>
                             </div>
                             <!-- Footer -->    
@@ -175,8 +172,7 @@
     </nav>
     <!-- ------------------------------------------------------------------------------------ -->
     <script type="text/javascript" src="../public/js/jquery.js"></script>
-
-    <script>
+    <!-- <script>
     $(function () {
         var membersList = [{
             Account:"12@gmail.com",Password:"12345"
@@ -184,7 +180,6 @@
         var loginModal = new bootstrap.Modal(document.getElementById('loginModal'), {
             keyboard: false
         })
-
         $("#loginbtn").on("click", function () {
             loginModal.hide();
             console.log(dataToServer);
@@ -193,8 +188,8 @@
                 Password: $("#passwordInsert").val(),
             }
             $.ajax({
-                type: "get",
-                url: "/home/login",
+                type: "post",
+                url: "/data/login",
                 data: dataToServer
             }).then(function (e) {
                 //更新
@@ -202,12 +197,15 @@
                 console.log(membersList);
             })
         })
-
     })
-    </script>
+    </script> -->
+
+    <%- body %>
 
 
-    <!-- <%- body %> -->
+
+
+    
 
 </body>
     <!-- register：亂碼 -->

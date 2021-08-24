@@ -6,9 +6,13 @@ let app = express();
 let engine = require('ejs-locals');
 
 // 以 body-parser 模組協助 Express 解析表單與JSON資料
-var bodyParser = require('body-parser');
-app.use( bodyParser.json() );
-app.use( bodyParser.urlencoded({extended: false}) );
+// var bodyParser = require('body-parser');
+
+//新版express以內建解析資料
+// parse application/json
+app.use(express.json());
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({extended: false}) );
 
 //使用 public 資料夾，並成功引入裡面的bootstrap、css、js
 app.use("/public", express.static(__dirname + "/public"));
@@ -54,27 +58,38 @@ connection.connect(function(err) {
 	console.log("sql connectted");
 });
 
+//-----------------------------------------------------------
+//路由器
+
+//首頁
 app.get('/home', function (req, res) {
 	res.render('homepage', { 'title': '團購網首頁' });
-	console.log("success render home.")
+	// console.log("success render home.")
 })
 //團長註冊
 app.get('/home/register', function (req, res) {
 	res.render('register', {'title': '註冊'});
 })
-
+//團長上架商品
 app.get('/home/tanstart', function (req, res) {
 	res.render('tanstart', { 'title': '上架商品' });
 })
-
+//團長商品管理
 app.get('/home/tansetting', function (req, res) {
 	res.render('tansetting', { 'title': '商品管理' });
 })
-
+//
 app.get('/home/commodity', function (req, res) {
 	res.render('commodity', { 'title': '商品列表' });
 })
-// -------------------------------------
+//購物車
+app.get('/home/shoppingcart', function (req, res) {
+	res.render('shoppingcart', { 'title': '購物車' });
+})
+
+//-----------------------------------------------------------
+
+//上傳資料
 //到這裡看資料庫
 app.get("/data", function (req, res) {
 	connection.query('select Id,Name,Phone,Email from members', 
@@ -91,21 +106,23 @@ app.get("/data", function (req, res) {
 })
 
 //'/:id' req.params
-//commodity表單資料
+// commodity表單資料
 app.get('/data/commodity', function (req, res) {
 	var query = req.query;
 	res.send(query).end();
 })
-//傳商品資料到資料庫
+
+// 傳商品資料到資料庫
 app.post('/data/commodity', function (req, res) {
 	connection.query(
 		"insert into commodity set Name = ?",
 		[
-			req.body.name
-		],function (err, result) {
+			req.body.postname
+		], function (err, result) {
 			if (err) {
 				console.log(JSON.stringify(err));
 				console.log("error can not insert");
+				console.log(req.body.name);
 			} else {
 				if (result.lenght > 0) {
 					//傳回Json陣列	
@@ -113,16 +130,17 @@ app.post('/data/commodity', function (req, res) {
 				}
 			}
 		}
-	)
+	);
 	res.send(req.body);
+	console.log("ok");
 })
-//test app.post
+// test app.post
 // app.post('/data/commodity', function (req, res) {
 // 	connection.query(
 // 		"insert into commodity set Name = 252",
 // 		[]
 // 	)
-// 	console.log(req.body.name);
+// 	console.log(req.body.postname);
 // })
 
 // 測試用insert into members set Name = "fb", Phone = "4141414" , Email = "g@gmail.com" ,Account = "fb", Password = "fb", Birthday = "2021-02-08", county = "澎湖縣", district = "馬公市",  Gender= "on"
@@ -158,12 +176,12 @@ app.post("/data/register", function (req, res) {
 	console.log("\nsuccess insert2.");
 })
 
-app.get("/data/login", function (req, res) {	
+app.post("/data/login", function (req, res) {	
 	// 用body需要傳請求
 	// var account = req.body.Account;
 	// var passsword = req.body.Passsword;
-	var account = req.params.Account;
-	var passsword = req.params.Passsword;	
+	var account = req.body.account;
+	var password = req.body.password;	
 	// res.send(req[0]);
-	res.send("login success.--------- Account： " + account + " Passsword： " +  passsword );
+	res.send(`<h3>login success.</h3> <p>Account：${account}</p> <p>Passsword：${password}</p>`);
 })
