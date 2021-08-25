@@ -2,37 +2,159 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-sm-8 offset-2 table-responsive-sm" >
-            <table class="table table-primary">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">商品名稱</th>
-                        <th scope="col">價錢</th>
+        <div class="progress col-sm-8 mx-auto mb-5" style="height: 10px;">
+            <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+        <div class="col-sm-9 mx-auto mb-5">
+            <table class="table table-warning table-striped table-hover align-middle">
+                <thead class="table-light md-3">
+                    <tr class="">
+                        <th scope="col">
+                            <div class="spinner-grow" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </th>
+                        <th scope="col">名稱</th>
+                        <th scope="col">單價</th>
                         <th scope="col">數量</th>
+                        <th scope="col">總計</th>
+                        <th scope="col">刪除</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td colspan="6">日本好吃</td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <th scope="row">
+                            <button class="btn btn-primary" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                <span class="visually-hidden">Loading...</span>
+                            </button>
+                        </th>
+                        <td>好吃棒</td>
+                        <td>20</td>
+                        <td ><input type="number" name="num" id="" placeholder="購買數量" style ="max-width: 60%;"></td>
+                        <td>$*num(val)</td>
+                        <td><a href="#">刪除</a></td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@twitter</td>
+                        <td colspan="6">日本好吃</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </th>
+                        <td>好吃棒</td>
+                        <td>20</td>
+                        <td><input type="number" name="num" id="" placeholder="購買數量" style ="max-width: 60%;"></td>
+                        <td>$*num(val)</td>
+                        <td><button type="button" class="btn-close" aria-label="Close"></button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">日本好吃</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        </th>
+                        <td>
+                            <div class="card mb-3" style="max-width: 200px;">
+                            <div class="row g-0">
+                                <div class="col-md-5">
+                                    <img src="https://picsum.photos/400/400" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card </p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></td>
+                        <td>20</td>
+                        <td><input type="number" name="num" id="" placeholder="購買數量" style ="max-width: 60%;"></td>
+                        <td>$*num(val)</td>
+                        <td><button type="button" class="btn-close" aria-label="Close"></button></td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">||</th>
+                        <td colspan="3">滿 ... 免運</td>
+                        <td colspan="2"><button class="btn btn-primary" type="submit">出貨</button></td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>
 </div>
+
+
+
+<!-- <script>
+    $(function () {
+        //設一個變數來辨別對話是由新增還是修改
+        var currentIndex = -1;
+        var newModal = new bootstrap.Modal(document.getElementById('newModal'), {
+            keyboard: false
+        })
+
+        var membersList = [{
+                Id: 1,
+                Name: "name",
+                Phone: "phone",
+                Email: "email"
+            }
+        ];
+
+        // 練習與任務:
+
+        function refreshUI() {
+            $("#latestNews").empty();
+            membersList.forEach(function (member) {
+                //變數用於jquery，顯示的東西 [${member.Phone}]
+                let listText = `${member.Name} 電話：${member.Phone} 信箱：${member.Email}`;
+                // alert(liText);
+                //jquery物件用於jquery
+                let $list = $(
+                    '<li class="list-group-item list-group-item-action list-group-item-secondary" href="#"></li>'
+                    );
+                //<li>text</li>
+                $list.text(listText);
+                $list.addClass("list-group-item");
+                //要用''，因為"pull-right"...
+                $list.append(
+                    '<button class="btn btn-outline-primary btn-sm editItem ms-auto" type="button">修改</button><button class="btn btn-outline-danger btn-sm deleteItem" type="button">刪除</button>'
+                );
+                $("#latestNews").append($list);
+            })
+            //修改
+            $(".editItem").on("click", function () {
+                //尋找父節點，看在第幾個，jquery的index
+                newModal.show();
+                var idx = $(this).closest("li").index();
+                //將全域變數在function內改值，區分modal的ok是修改是新增
+                currentIndex = idx;
+                //顯示目前的內容
+                console.log(idx + "   " + membersList[idx].Name);
+                $("#nameInsert").prop("value", membersList[idx].Name);
+                $("#phoneInsert").val(membersList[idx].Phone);
+                $("#emailInsert").val(membersList[idx].Email);
+            })
+            //刪除
+            $(".deleteItem").on("click", function () {
+                var idx = $(this).closest("li").index();
+                $.ajax({
+                    type: "delete",
+                    url: "/home/news",
+                    data: membersList[idx]
+                }).then(function (e) {
+                    showToast("info", e);
+                    downloadDataAndRefreshUI();
+                })
+            })
+        } -->
