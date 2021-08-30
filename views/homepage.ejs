@@ -81,24 +81,9 @@
 <!-- ------------------------------------------------------------------------------------ -->
     <!-- 卡片欄位 -->
     <!-- 不要用格線系統 -->
-    <div class="row mt-3 mx-aotu">
+    <!-- <div class="row mt-3 mx-auto">
         <div class="col-12 bg-light">
             <i class="bi bi-truck "></i>
-            <!-- 吐司訊息 -->
-            <!-- <button type="button" class="btn btn-primary" id="liveToastBtn">點我開始</button>
-            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-                        <img src="..." class="rounded me-2" alt="...">
-                        <strong class="me-auto">Bootstrap</strong>
-                        <small>11 mins ago</small>
-                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-                        開始
-                    </div>
-                </div>
-            </div> -->
         </div>    
     </div>  
     <section class="d-flex justify-content-center"> 
@@ -213,6 +198,80 @@
             </div>
         </div>
     </section>
+<!-- ------------------------------------------------------------------------------------ -->
+    <div class="container mx-5 p-5 bg-light mx-auto mb-5">
+        <div class="row mx-auto mb-5">
+            <!-- <div class="col-md-10">
+                <button type="addNewProduct" name="addNewProduct" id="addNewProduct">增加新商品</button>
+            </div> -->
+            <!-- float: right; -->
+            <div class="col-md-1 offset-11" style="float:none; cursor: pointer;">
+                <span class="glyphicon glyphicon-shopping-cart my-cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    <span class="badge badge-notify my-cart-badge"></span>
+                </span>
+            </div>    
+        </div>
+        
+        <div class="row mx-auto g-2 productRow">
+            <div class="col-md-3 text-center">
+                <img src="../public/img/products/umaibou.png" width="150px" height="150px">
+                <h5 class="card-text">好吃棒</h5>
+                <p class="card-text originalPrice"><del>原價: </del><span><del>100</del></span></p>
+                <p class="card-text preferentialPrice">優惠價: <span>80</span></p>
+                <p class="card-text">數量: <span class="productQuantity">5/100</span></p>
+                <!-- <br>
+                product 1 - <strong>$10</strong>
+                <br> -->
+                <button class="btn btn-danger my-cart-btn btn-sm" data-id="1" data-name="product 1" data-summary="summary 1"
+                    data-price="10" data-quantity="1" data-image="../public/img/products/umaibou.png">購買</button>
+                <a href="#" class="btn btn-info">Details</a>
+            </div>
+    
+            <div class="col-md-3 text-center">
+                <img src="../public/img/products/umaibou.png" width="150px" height="150px">
+                <br>
+                product 2 - <strong>$20</strong>
+                <br>
+                <button class="btn btn-danger my-cart-btn btn-sm" data-id="2" data-name="product 2" data-summary="summary 2"
+                    data-price="20" data-quantity="1" data-image="../public/img/products/umaibou.png">購買</button>
+                <a href="#" class="btn btn-info">Details</a>
+            </div>
+    
+            <div class="col-md-3 text-center">
+                <img src="../public/img/products/umaibou.png" width="150px" height="150px">
+                <br>
+                product 3 - <strong>$30</strong>
+                <br>
+                <button class="btn btn-danger my-cart-btn btn-sm" data-id="3" data-name="product 3" data-summary="summary 3"
+                    data-price="30" data-quantity="1" data-image="../public/img/products/umaibou.png">購買</button>
+                <a href="#" class="btn btn-info">Details</a>
+            </div>
+    
+            <div class="col-md-3 text-center">
+                <img src="../public/img/products/umaibou.png" width="150px" height="150px">
+                <br>
+                product 4 - <strong>$40</strong>
+                <br>
+                <button class="btn btn-danger my-cart-btn btn-sm" data-id="4" data-name="product 4" data-summary="summary 4"
+                    data-price="40" data-quantity="1" data-image="../public/img/products/umaibou.png">購買</button>
+                <a href="#" class="btn btn-info">Details</a>
+            </div>
+    
+            <div class="col-md-3 text-center">
+                <img src="../public/img/products/umaibou.png" width="150px" height="150px">
+                <br>
+                product 5 - <strong>$50</strong>
+                <br>
+                <button class="btn btn-danger my-cart-btn btn-sm" data-id="5" data-name="product 5" data-summary="summary 5"
+                    data-price="50" data-quantity="1" data-image="../public/img/products/umaibou.png">購買</button>
+                <a href="#" class="btn btn-info">Details</a>
+            </div>
+        </div>
+    </div>
+<!-- ------------------------------------------------------------------------------------  -->
     <!-- 頁數 -->
     <section>
         <nav class="justify-content-center" aria-label="Page navigation example">
@@ -232,8 +291,7 @@
                 </li>
             </ul>
         </nav>
-    </section>
-
+    </section> 
 <!-- ------------------------------------------------------------------------------------ --> 
     <!-- footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
@@ -372,4 +430,99 @@
             igoogle.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16"><path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/></svg>';
         }
         
+    </script>
+<!-- ------------------------------------------------------------------------------------ -->  
+<!-- 購物車 -->
+    <script src="../public/js/jquery-2.2.3.min.js"></script>
+    <script type='text/javascript' src="../public/js/jquery.mycart.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var goToCartIcon = function ($addTocartBtn) {
+                var $cartIcon = $(".my-cart-icon");
+                var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") +
+                    '"/>').css({
+                    "position": "fixed",
+                    "z-index": "999"
+                });
+                $addTocartBtn.prepend($image);
+                var position = $cartIcon.position();
+                $image.animate({
+                    top: position.top,
+                    left: position.left
+                }, 500, "linear", function () {
+                    $image.remove();
+                });
+            }
+
+            $('.my-cart-btn').myCart({
+                currencySymbol: '$',
+                classCartIcon: 'my-cart-icon',
+                classCartBadge: 'my-cart-badge',
+                classProductQuantity: 'my-product-quantity',
+                classProductRemove: 'my-product-remove',
+                classCheckoutCart: 'my-cart-checkout',
+                affixCartIcon: true,
+                showCheckoutModal: true,
+                numberOfDecimals: 2,
+                cartItems: [
+                    {
+            //         id: 1,
+            //         name: 'product 1',
+            //         summary: 'summary 1',
+            //         price: 10,
+            //         quantity: 1,
+            //         image: '../public/img/products/umaibou.png'
+            //     },
+            //     {
+            //         id: 2,
+            //         name: 'product 2',
+            //         summary: 'summary 2',
+            //         price: 20,
+            //         quantity: 2,
+            //         image: '../public/img/products/umaibou.png'
+                    }
+                ],
+                clickOnAddToCart: function ($addTocart) {
+                    goToCartIcon($addTocart);
+                },
+                afterAddOnCart: function (products, totalPrice, totalQuantity) {
+                    console.log("afterAddOnCart", products, totalPrice, totalQuantity);
+                },
+                clickOnCartIcon: function ($cartIcon, products, totalPrice, totalQuantity) {
+                    console.log("cart icon clicked", $cartIcon, products, totalPrice,
+                    totalQuantity);
+                },
+                checkoutCart: function (products, totalPrice, totalQuantity) {
+                    var checkoutString = "Total Price: " + totalPrice + "\nTotal Quantity: " +
+                        totalQuantity;
+                    checkoutString +=
+                        "\n\n id \t name \t summary \t price \t quantity \t image path";
+                    $.each(products, function () {
+                        checkoutString += ("\n " + this.id + " \t " + this.name + " \t " +
+                            this.summary + " \t " + this.price + " \t " + this
+                            .quantity + " \t " + this.image);
+                    });
+                    alert(checkoutString)
+                    console.log("checking out", products, totalPrice, totalQuantity);
+                },
+                getDiscountPrice: function (products, totalPrice, totalQuantity) {
+                    console.log("calculating discount", products, totalPrice, totalQuantity);
+                    return totalPrice * 0.5;
+                }
+            });
+
+            $("#addNewProduct").click(function (event) {
+                var currentElementNo = $(".row").children().length + 1;
+                $(".productRow").append(
+                    '<div class="col-md-3 text-center"><img src="images/img_empty.png" width="150px" height="150px"><br>product ' +
+                    currentElementNo + ' - <strong>$' + currentElementNo +
+                    '</strong><br><button class="btn btn-danger btn-sm my-cart-btn" data-id="' +
+                    currentElementNo + '" data-name="product ' + currentElementNo +
+                    '" data-summary="summary ' + currentElementNo + '" data-price="' +
+                    currentElementNo +
+                    '" data-quantity="1" data-image="../public/img/products/umaibou.png">購買</button><a href="#" class="btn btn-info">Details</a></div>'
+                    )
+            });
+        });
     </script>

@@ -2,9 +2,10 @@
 var express = require('express');
 // 使用express
 var app = express();
-
 //file
 var fs = require('fs');
+//設定全域變數
+// var config = require('./public/js/config');
 
 var engine = require('ejs-locals');
 
@@ -45,10 +46,9 @@ console.log("鍵盤「Ctrl + C」可結束伺服器程式.");
 var home = require('./routes/home');
 // 第一個參數有點類似命名第一層的網址 /home/XXXX
 app.use('/home', home);
-var data = require('./routes/data');
-app.use('/data', data);
+// var data = require('./routes/data');
+// app.use('/data', data);
 // ----------------------------------------
-
 
 var login = function (req, res, next) {
 	console.log('驗證成功')

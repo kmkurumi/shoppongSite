@@ -9,7 +9,7 @@
 /* TODO: not attached to body. attached to specific els. move */
 .fc-unselectable {
   -webkit-user-select: none;
-     -moz-user-select: none;
+      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   -webkit-touch-callout: none;
@@ -172,7 +172,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
-       -moz-user-select: none;
+        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
     background-color: transparent;

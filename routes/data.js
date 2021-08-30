@@ -6,14 +6,14 @@ var router = express.Router();
 var mysql = require('mysql');
 var connection = mysql.createConnection({
 	host: '127.0.0.1',
-	user: 'root',
-	password: 'root',
-	port: '3307',
-	database: 'shoppingSite'
+    user: 'root',
+    password: 'root',
+    port: '3307',
+    database: 'shoppingSite'
 });
 //連線異常報錯
 connection.connect(function (err) {
-	// if (err) throw err;
+	// if (err) throw err;	
 	if (err) {
 		console.log(JSON.stringify(err));
 		return;
@@ -25,7 +25,7 @@ connection.connect(function (err) {
 // 上傳資料
 // 到這裡看資料庫
 router.get("/", function (req, res) {
-	connection.query('select Id,Name,Phone,Email from members',
+	connection.query('select Id,Name,Account,Password from members',
 		function (err, rows) {
 			if (err) {
 				console.log(JSON.stringify(err));
@@ -37,6 +37,25 @@ router.get("/", function (req, res) {
 		}
 	);
 })
+
+//---------------------------------------------------------------
+// router.get("/", function (req, res) {
+// 	connection.query('select Id,Name,Account,Password from members',
+// 		function (err, rows) {
+// 			if (err) {
+// 				console.log(JSON.stringify(err));
+// 			} else{
+// 				if (rows.array.forEach(row => {	row.Account==="kevin123"				
+// 				})) {
+// 					console.log("有kevin123");
+// 				}
+// 			}
+// 			//傳回Json陣列
+// 			res.send(JSON.stringify(rows));
+// 			console.log("success get.");
+// 		}
+// 	);
+// })
 
 //'/:id' req.params
 // commodity表單資料
@@ -50,16 +69,16 @@ router.post('/commodity', function (req, res) {
 	connection.query(
 		"insert into commodity set Name = ?",
 		[
-			req.body.postname
-		], function (err, result) {
+			req.body.name
+		], function (err, results) {
 			if (err) {
 				console.log(JSON.stringify(err));
 				console.log("error can not insert");
 				console.log(req.body.name);
 			} else {
-				if (result.lenght > 0) {
+				if (results.lenght > 0) {
 					//傳回Json陣列	
-					res.send(JSON.stringify(result));
+					res.send(JSON.stringify(results));
 				}
 			}
 		}
@@ -92,14 +111,14 @@ router.post("/register", function (req, res) {
 			req.body.district,
 			req.body.companyPhone,
 			req.body.gender
-		], function (err, result) {
+		], function (err, results) {
 			if (err) {
 				console.log(JSON.stringify(err));
 				console.log("\nerror can not insert");
 			} else {
-				if (result.lenght > 0) {
+				if (results.lenght > 0) {
 					//傳回Json陣列	
-					res.send(JSON.stringify(result));
+					res.send(JSON.stringify(results));
 					console.log("\nsuccess insert1.");
 				}
 			}
@@ -109,14 +128,29 @@ router.post("/register", function (req, res) {
 	console.log("\nsuccess insert2.");
 })
 
+router.post("/product", function (req, res) {
+	res.send("ok");
+})
 router.post("/login", function (req, res) {
 	// 用body需要傳請求
-	// var account = req.body.Account;
-	// var passsword = req.body.Passsword;
 	var account = req.body.account;
 	var password = req.body.password;
-	// res.send(req[0]);
-	res.send(`<h3>login success.</h3> <p>Account：${account}</p> <p>Passsword：${password}</p>`);
+	var user = {"Account":account,"Password": password};
+	// connection.query("select Id,Account,Password from members",
+	// 	function (err, results) {
+	// 		if (err) {
+	// 			console.log(JSON.stringify(err));
+	// 			console.log(JSON.stringify(results));
+	// 		} else {
+	// 			if (results.Account == user.Account && results.Password == user.Password) {
+	// 				console.log("帳密正確");
+	// 			}
+	// 			console.log("帳密不正確");
+	// 		}
+	// 		res.send(JSON.stringify(results));
+	// 	});
+	// 	console.log(user);
+	res.send(`<h3>login success.</h3> <p>Account：${account}</p> <p>Password：${password}`);
 })
 
 module.exports = router;

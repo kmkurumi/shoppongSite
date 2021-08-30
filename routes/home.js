@@ -18,13 +18,17 @@ router.get('/tanstart', function (req, res) {
 router.get('/tansetting', function (req, res) {
 	res.render('tansetting', { 'title': '商品管理' });
 })
-//
+//商品
 router.get('/commodity', function (req, res) {
 	res.render('commodity', { 'title': '商品列表' });
 })
 //購物車
 router.get('/shoppingcart', function (req, res) {
 	res.render('shoppingcart', { 'title': '購物車' });
+})
+//商品欄位
+router.get('/mycart', function (req, res) {
+	res.render('mycart', { 'title': '商品欄位' });
 })
 
 module.exports = router;
