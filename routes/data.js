@@ -1,27 +1,12 @@
 //載入express模組
 var express = require('express');
+// const { connection } = require('mongoose');
 var router = express.Router();
+// const db = require('../models');
 
-// 建立資料庫連線
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-	host: '127.0.0.1',
-    user: 'root',
-    password: 'root',
-    port: '3307',
-    database: 'shoppingSite'
-});
-//連線異常報錯
-connection.connect(function (err) {
-	// if (err) throw err;	
-	if (err) {
-		console.log(JSON.stringify(err));
-		return;
-	}
-	console.log("sql connectted");
-});
-
-
+// const MemberController = require('../controllers/members_controller');
+// memberController = new MemberController();
+// const connection = require('../models/connection_db');
 // 上傳資料
 // 到這裡看資料庫
 router.get("/", function (req, res) {
@@ -37,25 +22,6 @@ router.get("/", function (req, res) {
 		}
 	);
 })
-
-//---------------------------------------------------------------
-// router.get("/", function (req, res) {
-// 	connection.query('select Id,Name,Account,Password from members',
-// 		function (err, rows) {
-// 			if (err) {
-// 				console.log(JSON.stringify(err));
-// 			} else{
-// 				if (rows.array.forEach(row => {	row.Account==="kevin123"				
-// 				})) {
-// 					console.log("有kevin123");
-// 				}
-// 			}
-// 			//傳回Json陣列
-// 			res.send(JSON.stringify(rows));
-// 			console.log("success get.");
-// 		}
-// 	);
-// })
 
 //'/:id' req.params
 // commodity表單資料
@@ -126,11 +92,28 @@ router.post("/register", function (req, res) {
 	);
 	res.send(req.body);
 	console.log("\nsuccess insert2.");
+	console.log("ok");
+	// res.redirect('/home');
 })
 
 router.post("/product", function (req, res) {
-	res.send("ok");
+	res.send(req.body);
 })
+// insert into commodities set Name = 'food1',Price= 10
+router.get("/product", function (req, res) {
+	connection.query(
+		'select Id,Name,Price from commodities', '',
+		function (err, rows) {
+			if (err) {
+				console.log(JSON.stringify(err));
+				return;
+			}
+			//傳回Json陣列
+			res.send(JSON.stringify(rows));	
+		}
+	);
+})
+
 router.post("/login", function (req, res) {
 	// 用body需要傳請求
 	var account = req.body.account;

@@ -1,6 +1,6 @@
 <% layout('layout') %>
 <!-- 基本資訊 -->
-<div class="container-md p-5 my-5 bg-light tansetting">
+<div class="container-md p-5 mt-5 bg-light tansetting">
     <form action="/data/product" method="post" class="ps-5">
         <div class="row mb-3">
             <h1><strong>基本資訊</strong></h1><hr>
@@ -22,12 +22,11 @@
 
         <div class="row mb-3">
             <div class="col-sm-8">
-                <select class="form-select mb-3" aria-label=".form-select-lg" name="" required>
+                <select class="form-select mb-3" aria-label=".form-select-lg example" required>
                     <option selected>商品種類</option>
-                    <option value="food">食物</option>
-                    <option value="Supply">用品</option>
-                    <option value="drink">飲料</option>
-                    <option value="other">其他</option>
+                    <option value="1">食物</option>
+                    <option value="2">用品</option>
+                    <option value="3">飲料</option>
                 </select>
             </div>
         </div>
@@ -51,8 +50,12 @@
                 <textarea class="form-control " id="exampleFormControlTextarea1" rows="7"></textarea>
             </div>  
         </div>                      
+    </form>
+</div>
 <!-- --------------------------------------------------------------------- -->
 <!-- 銷售資訊-->
+<div class="container-md p-5 mt-5 bg-light tansetting">
+    <form action=""class="ps-5">
         <div class="row mb-3">
             <h1><strong>銷售資訊</strong></h1><hr>
         </div>
@@ -69,10 +72,14 @@
                 <span class="input-group-text">@</span>
                 <input type="text" aria-label="quntity" class="form-control" name="quntity" placeholder="數量">
             </div>   
-        </div>
-        <div style="width: 2000px; height: 50px; background-color: #d4d4d4; padding: auto;" class="d-grid"></div>                           
+        </div>                  
+    </form>
+</div>          
+
 <!-- --------------------------------------------------------------------- -->
 <!-- 運費 -->
+<div class="container-md p-5 my-5 bg-light tansetting">
+    <form action="" class="ps-5">
         <div class="mb-3 ">
             <h1><strong>運費</strong></h1>
         </div><hr>
@@ -80,7 +87,7 @@
         <div class="row mb-3">
             <div class="col-sm-8">
                 <label for="brand">重量</label>
-                <input type="text" id="brand" class="form-control" placeholder="輸入重量(公克)">
+                <input type="text" id="brand" class="form-control" placeholder="輸入公克">
             </div>
         </div>
 
@@ -88,9 +95,9 @@
             <div class="col-sm-8"> 
                 <label for="brand">尺寸</label>
                 <div class="col-sm-8 input-group">
-                    <input type="text" id="lenght" class="form-control" placeholder="輸入長(公分)">
-                    <input type="text" id="" class="form-control" placeholder="輸入寬(公分)">
-                    <input type="text" id="height" class="form-control" placeholder="輸入高(公分)">
+                    <input type="text" id="brand" class="form-control" placeholder="輸入長">
+                    <input type="text" id="brand" class="form-control" placeholder="輸入寬">
+                    <input type="text" id="brand" class="form-control" placeholder="輸入高">
                 </div>
             </div>
         </div>
@@ -173,6 +180,7 @@
         </div>
     </form>
 </div>
+
 <!-- --------------------------------------------------------------------- -->
 <!-- 跳出視窗內容 ，id=data-bs-target-->
 <div class="modal fade deliveryFee">

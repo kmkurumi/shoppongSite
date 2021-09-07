@@ -34,11 +34,11 @@
     body{
         font-family: 'Noto Serif TC', serif;
     }
-    h5{
+    .productRow h4{
         margin:1px auto;
         font-weight: 600;
     }
-    p{
+    .productRow p{
         margin:1px auto;
     } 
     @media (max-width:767.98px) {
@@ -46,18 +46,6 @@
             width: 250px;
         }
     }
-    /* 購物車 */
-        .badge-notify {
-            background: red;
-            position: relative;
-            top: -20px;
-            right: 10px;
-        }
-        .my-cart-icon-affix {
-            position: fixed;
-            z-index: 999;
-        }
-
 </style>
 </head>
 <body>
@@ -136,14 +124,14 @@
                             <!-- Body -->
                             <div class="modal-body">
                                 <!-- 登入表單 -->
-                                <form method="post" action="/data/login">
+                                <form method="post" action="/login">
                                     <!-- account -->
-                                    <div class="form-group mb-3">
-                                        <input id="accountInsert" type="text" class="account form-control" placeholder="請輸入帳號" name="account">                          
+                                    <div class=" form-group mb-3">
+                                        <input id="accountInsert" type="text" class="account form-control" placeholder="請輸入帳號a" name="account">                          
                                     </div>
                                     <!-- password -->
                                     <div class="form-group mb-3">
-                                        <input id="passwordInsert" type="password" class="password form-control"placeholder="請輸入密碼" name="password">                          
+                                        <input id="passwordInsert" type="password" class="password form-control " placeholder="請輸入密碼" name="password">                          
                                     </div>
                                     <!-- checkbox -->
                                     <div class="form-group mb-3">
@@ -218,11 +206,6 @@
     </script> -->
 
     <%- body %>
-
-
-
-
-    
 
 </body>
     <!-- register：亂碼 -->

@@ -31,4 +31,8 @@ router.get('/mycart', function (req, res) {
 	res.render('mycart', { 'title': '商品欄位' });
 })
 
+//商品欄位
+router.get('/search', function (req, res) {
+	res.render('search', { 'title': '查詢' });
+})
 module.exports = router;

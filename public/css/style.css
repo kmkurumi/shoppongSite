@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #d4d4d4;
 }
@@ -71,5 +72,22 @@ body {
   .tanregister {
     width: 60%;
   }
+}
+
+.productRow .col-md-3 {
+  border: 1px solid #e2e2e2;
+}
+
+/* 購物車 */
+.badge-notify {
+  background: red;
+  position: relative;
+  top: -20px;
+  right: 10px;
+}
+
+.my-cart-icon-affix {
+  position: fixed;
+  z-index: 999;
 }
 /*# sourceMappingURL=style.css.map */
